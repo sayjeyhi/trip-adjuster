@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:mesbah68/ReactSnippets.git"
+  },
+  "author": "Mahsa Mesbah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mesbah68/ReactSnippets/issues"
+  },
+  "homepage": "https://github.com/mesbah68/ReactSnippets#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.8.0",
+    "lodash": "^4.17.21",
+    "nodemon": "^2.0.15"
+  }
+}

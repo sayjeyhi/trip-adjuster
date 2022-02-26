@@ -1,5 +1,10 @@
 const graphql = require('graphql');
-const lod = require('lodash');
+const _ = require('lodash');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const {
+  NOTIFICATIONS, DESTINATIONS, DISCOUNTS, config, users,
+} = require('../data');
 
 const {
   GraphQLObjectType,
@@ -7,97 +12,91 @@ const {
   GraphQLSchema,
   GraphQLID,
   GraphQLInt,
+  GraphQLFloat,
+  GraphQLBoolean,
   GraphQLList,
-  GraphQLNonNull,
 } = graphql;
 
-const DESTINATIONS = [
-  {
-    id: '1', name: 'GraphQl', group: 'front', teacherId: '1',
-  },
-  {
-    id: '2', name: 'React', group: 'front', teacherId: '3',
-  },
-  {
-    id: '3', name: 'Express', group: 'back', teacherId: '2',
-  },
-];
-
-const teachers = [
-  { id: '1', name: 'Mahsa Mesbah', age: 32 },
-  { id: '2', name: 'Jafar Rezaei', age: 27 },
-  { id: '3', name: 'Ali Alaei', age: 30 },
-];
-
-const TeacherType = new GraphQLObjectType({
-  name: 'teacher',
+const UserType = new GraphQLObjectType({
+  name: 'user',
   fields: () => ({
     id: { type: GraphQLID },
     name: { type: GraphQLString },
-    age: { type: GraphQLInt },
-    lessons: {
-      type: new GraphQLList(LessonType),
-      resolve(parent, args) {
-        return lod.filter(lessons, { teacherId: parent.id });
-      },
-    },
+    token: { type: GraphQLString },
+    loggedIn: { type: GraphQLBoolean },
   }),
 });
 
-const LessonType = new GraphQLObjectType({
-  name: 'lesson',
+const NotificationType = new GraphQLObjectType({
+  name: 'notification',
+  fields: () => ({
+    id: { type: GraphQLID },
+    title: { type: GraphQLString },
+    time: { type: GraphQLString },
+  }),
+});
+
+const DiscountType = new GraphQLObjectType({
+  name: 'discount',
+  fields: () => ({
+    id: { type: GraphQLID },
+    title: { type: GraphQLString },
+    active: { type: GraphQLBoolean },
+    discount: { type: GraphQLInt },
+    validUntil: { type: GraphQLString },
+    locationTitle: { type: GraphQLString },
+  }),
+});
+
+const DestinationType = new GraphQLObjectType({
+  name: 'destination',
   fields: () => ({
     id: { type: GraphQLID },
     name: { type: GraphQLString },
-    group: { type: GraphQLString },
-    teacher: {
-      type: TeacherType,
-      resolve(parent, args) {
-        return lod.find(teachers, { id: parent.teacherId });
-      },
-    },
+    description: { type: GraphQLString },
+    star: { type: GraphQLFloat },
+    price: { type: GraphQLFloat },
+    destination: { type: GraphQLFloat },
+    city: { type: GraphQLString },
+    country: { type: GraphQLString },
   }),
 });
 
 const Mutation = new GraphQLObjectType({
   name: 'Mutation',
   fields: {
-    addLesson: {
-      type: LessonType,
+    login: {
+      type: UserType,
       args: {
-        name: { type: new GraphQLNonNull(GraphQLString) },
-        id: { type: GraphQLID },
-        group: { type: new GraphQLNonNull(GraphQLString) },
-        teacher: { type: GraphQLID },
+        username: { type: GraphQLString },
+        password: { type: GraphQLString },
       },
       resolve(parent, args) {
-        const lesson = {
-          name: args.name,
-          id: args.id,
-          group: args.group,
-          teacher: args.teacher,
+        /**
+         * Check account and verify password
+         */
+        const currentAdminUser = users.findIndex((user) => user.username === args.username);
+        if (
+          currentAdminUser === -1
+          || !bcrypt.compareSync(args.password, users[currentAdminUser].passwordHash)
+        ) {
+          return {
+            loggedIn: false,
+            token: '',
+          };
+        }
+
+        const token = jwt.sign(
+          JSON.parse(JSON.stringify(users[currentAdminUser])),
+          config.SECRET,
+          { expiresIn: '12h' },
+        );
+
+        return {
+          ...users[currentAdminUser],
+          loggedIn: true,
+          token,
         };
-        lessons.push(lesson);
-        return lessons;
-      },
-    },
-    addTeacher: {
-      type: TeacherType,
-      args: {
-        name: { type: new GraphQLNonNull(GraphQLString) },
-        id: { type: GraphQLID },
-        age: { type: new GraphQLNonNull(GraphQLString) },
-        lesson: { type: new GraphQLNonNull(GraphQLString) },
-      },
-      resolve(parent, args) {
-        const teacher = {
-          name: args.name,
-          id: args.id,
-          age: args.age,
-          lesson: args.lesson,
-        };
-        teachers.push(teacher);
-        return lessons;
       },
     },
   },
@@ -106,33 +105,38 @@ const Mutation = new GraphQLObjectType({
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
-    lesson: {
-      type: LessonType,
+    user: {
+      type: UserType,
       args: { id: { type: GraphQLID } },
       resolve(parent, args) {
-        return lod.find(lessons, { id: args.id });
+        return _.find(users, { id: args.id });
       },
     },
-    teacher: {
-      type: TeacherType,
+    destination: {
+      type: DestinationType,
       args: { id: { type: GraphQLID } },
       resolve(parent, args) {
-        return lod.find(teachers, { id: args.id });
+        return _.find(DESTINATIONS, { id: args.id });
       },
     },
-    lessons: {
-      type: new GraphQLList(LessonType),
+    discounts: {
+      type: new GraphQLList(DiscountType),
       resolve() {
-        return lessons;
+        return DISCOUNTS;
       },
     },
-    teachers: {
-      type: new GraphQLList(TeacherType),
+    destinations: {
+      type: new GraphQLList(DestinationType),
       resolve() {
-        return teachers;
+        return DESTINATIONS;
       },
     },
-
+    notifications: {
+      type: new GraphQLList(NotificationType),
+      resolve() {
+        return NOTIFICATIONS;
+      },
+    },
   },
 });
 

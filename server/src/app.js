@@ -7,14 +7,9 @@ const app = express();
 
 app.use(cors());
 
-const db = {
-  teachers: [],
-};
-
 app.use('/graphql', graphqlHTTP({
   schema,
   graphiql: true,
-  // rootValue: root,
 }));
 
 app.listen(4000, () => {

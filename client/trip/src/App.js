@@ -13,7 +13,7 @@ import Details from './components/Details';
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="App font-face-gb">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/details" element={<Details />} />

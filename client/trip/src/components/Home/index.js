@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'antd';
+import Header from './../Header';
 import { StyledHomeWrapper } from './style';
 
 const Home = () => {
@@ -8,7 +9,7 @@ const Home = () => {
       <Row className="ant-row ant-row-center">
         <Col span={12}>
           <StyledHomeWrapper>
-            <h2>Home</h2>
+            <Header type="profile" title="Schedule"  />
           </StyledHomeWrapper>
         </Col>
       </Row>

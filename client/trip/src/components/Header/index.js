@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Row, Col, Typography } from 'antd';
+import { Row, Col, Typography, Avatar } from 'antd';
 import avatar from '../../assets/images/avatar.jpeg';
 import { BellOIcon } from '@iconbox/fa4';
 import { ArrowIosBackOutlineIcon } from '@iconbox/eva'; 
 
-import { StyledHeaderWrapper, 
-         StyledProfilePic, 
+import { StyledHeaderWrapper,
          StyledUserName, 
          StyledNotification, 
          StyledIconWrapper,
@@ -18,9 +17,7 @@ const Header = ({type,title}) => {
       <StyledHeaderWrapper>
         {type === 'profile' ?
         <>
-          <StyledProfilePic>
-            <img src={avatar}  />
-          </StyledProfilePic> 
+          <Avatar src={avatar} style={{ width: 40, height: 40 }} />
           <StyledUserName>
             <Title level={5}>Welcome back!</Title>
             <Title level={4}>Mahsa Mesbah</Title>

@@ -2,20 +2,8 @@ import Styled from 'styled-components';
 
 export const StyledHeaderWrapper = Styled.div`
     display: flex;
+    align-items:center;
     padding: 0 20px;
-`;
-
-export const StyledProfilePic = Styled.div`
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    img {
-        margin-left: -17px;
-        width: 70px;
-    }
 `;
 
 export const StyledUserName = Styled.div`

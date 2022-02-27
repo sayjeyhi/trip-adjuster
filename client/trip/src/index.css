@@ -15,6 +15,6 @@ code {
 @font-face {
   font-family: "GilroyBlack";
   src: local("GilroyBlack"),
-   url("./assets/fonts/gilroy/Gilroy-Black.ttf") format("truetype");
+   url("./assets/fonts/gilroy/Gilroy-Medium.ttf") format("truetype");
   font-weight: bold;
   }

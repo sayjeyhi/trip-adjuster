@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'antd';
 import Header from './../Header';
+import Search from './../Search';
 import { StyledHomeWrapper } from './style';
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
         <Col span={12}>
           <StyledHomeWrapper>
             <Header type="profile" title="Schedule"  />
+            <Search />
           </StyledHomeWrapper>
         </Col>
       </Row>

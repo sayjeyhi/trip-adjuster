@@ -2,23 +2,22 @@ import Styled from 'styled-components';
 
 export const StyledNavbarWrapper = Styled.div`
   display: flex;
-  margin: 20px;
+  margin: 20px 0 10px 20px;
   padding-bottom: 10px;
-  overflow-x: scroll;
-  padding-bottom: 20px;
-  span {
-    padding-right: 30px;
-    color: #888;
+  .ant-anchor-ink {
+    height: 0;
+  }
+  .ant-anchor-link {
+    padding-left: 0;
+    padding-right: 30px !important;
     &.active {
-      // border-bottom: 1px solid #fa9e51  ;
-      color: #fa9e51;
-      // width: 112px;
-      // height: 47px;
-      // border-bottom: 1px solid black;
-      // &:before {
-      // }
+      a {
+        color: #fa9e51;
+      }
     }
-    
+  }
+  .ant-anchor {
+    display: flex;
   }
 `;
 

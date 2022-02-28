@@ -1,16 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Typography, Input, Anchor } from 'antd';
 import { SearchLightIcon } from '@iconbox/iconly';
 
 import { StyledCardHeaderWrapper } from './style';
 
-const Navbar = () => {
+const CardHeader = ({title}) => {
     const { Text, Title } = Typography;
     const { Link } = Anchor;
 
     return (
       <StyledCardHeaderWrapper>
-        <Title level={4}>Best Destination</Title>
+        <Title level={4}>{title}</Title>
         <Anchor affix={false} className="header-card" >
           <Link href="#" title="view all" />
         </Anchor>
@@ -18,7 +19,8 @@ const Navbar = () => {
     );
 }
 
-Navbar.propTypes = {
+CardHeader.propTypes = {
+  title: PropTypes.string,
 }
 
-export default Navbar;
+export default CardHeader;

@@ -13,17 +13,25 @@ export const StyledSearchWrapper = Styled.div`
 `;
 
 export const StyledIconWrapper = Styled.div`
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fa9e51;
-    position: absolute;
-    top: 4px;
-    right: 5px;
-    g {
-        stroke: white;
+    button {
+       background-color: #fa9e51;
+       border-color: #fa9e51;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       position: absolute;
+       top: 6px;
+       right: 7px;
+       &:hover {
+        background-color: #fa9e51;
+        border-color: #fa9e51;
+       }
+       &:active {
+        background-color: #fa9e51 !important;
+        border-color: #fa9e51 !important;
+       }
+       g {
+           stroke: white;
+       }
     }
 `;

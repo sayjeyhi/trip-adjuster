@@ -5,6 +5,7 @@ import Header from './../Header';
 import Search from './../Search';
 import Navbar from './../Navbar';
 import CardHeader from './../CardHeader';
+import DestinationItems from './../DestinationItems';
 
 import { StyledHomeWrapper } from './style';
 
@@ -17,7 +18,9 @@ const Home = () => {
             <Header type="profile" title="Schedule"  />
             <Search />
             <Navbar />
-            <CardHeader />
+            <CardHeader title="Best Destination" />
+            <DestinationItems />
+            <CardHeader title="Recommended" />
           </StyledHomeWrapper>
         </Col>
       </Row>

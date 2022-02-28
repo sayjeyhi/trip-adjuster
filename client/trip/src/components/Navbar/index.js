@@ -1,24 +1,27 @@
 import React from 'react';
-import { Typography, Input } from 'antd';
+import { Typography, Anchor } from 'antd';
 import { SearchLightIcon } from '@iconbox/iconly';
 
 import { StyledNavbarWrapper } from './style';
 
 const Navbar = () => {
     const { Text } = Typography;
+    const { Link } = Anchor;
+
     return (
       <StyledNavbarWrapper>
-        <Text className="active line">Bali</Text>
-        <Text>Jakarta</Text>
-        <Text>Bali</Text>
-        <Text>Jakarta</Text>
-        <Text>Bali</Text>
-        <Text>Jakarta</Text>
-        <Text >Bali</Text>
-        <Text>Jakarta</Text>
-        <Text>Bali</Text>
-        <Text>Jakarta</Text>
-        <Text >Bali</Text>
+        <Anchor affix={false} className="header-card" >
+          <Link href="#" title="Jakarta" className="active" />
+          <Link href="#" title="Bali" />
+          <Link href="#" title="Jakarta" />
+          <Link href="#" title="Bali" />
+          <Link href="#" title="Jakarta" />
+          <Link href="#" title="Bali" />
+          <Link href="#" title="Jakarta" />
+          <Link href="#" title="Bali" />
+          <Link href="#" title="Jakarta" />
+          <Link href="#" title="Bali" />
+        </Anchor>
       </StyledNavbarWrapper>
     );
 }

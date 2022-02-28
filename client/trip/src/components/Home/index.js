@@ -6,6 +6,8 @@ import Search from './../Search';
 import Navbar from './../Navbar';
 import CardHeader from './../CardHeader';
 import DestinationItems from './../DestinationItems';
+import RecommendedCard from './../RecommendedCard';
+import Footer from "./../Footer";
 
 import { StyledHomeWrapper } from './style';
 
@@ -21,6 +23,8 @@ const Home = () => {
             <CardHeader title="Best Destination" />
             <DestinationItems />
             <CardHeader title="Recommended" />
+            <RecommendedCard />
+            <Footer />
           </StyledHomeWrapper>
         </Col>
       </Row>

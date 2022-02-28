@@ -3,6 +3,5 @@ import Styled from 'styled-components';
 export const StyledHomeWrapper = Styled.div`
     background-color: #fcfcfc;
     border-radius: 2rem;
-    min-height: 20rem;
-    padding: 50px 0;
+    padding: 50px 0 0;
 `;

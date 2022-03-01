@@ -26,10 +26,13 @@ export const StyledCardImage = Styled.div`
 
 export const StyledCardDetails = Styled.div`
   display: flex;
-  align-items: flex-start;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
   padding-left: 10px;
+  &.align {
+    align-items: flex-start;
+  }
 `;
 
 export const StyledCardTitle = Styled.div`

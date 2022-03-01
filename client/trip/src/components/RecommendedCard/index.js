@@ -1,51 +1,58 @@
 import React from 'react';
-import { Image, Typography, Anchor } from 'antd';
-import { LocationCurvedIcon, StarCurvedIcon } from '@iconbox/iconly'; 
-import des2 from '../../assets/images/Destination-2.jpeg';
+import PropTypes from 'prop-types';
+import { Image, Typography } from 'antd';
+import { LocationCurvedIcon } from '@iconbox/iconly'; 
 
 import { StyledCardWrapper, 
          StyledCardImage, 
          StyledCardDetails, 
-         StyledCardTitle, 
-         StyledRateItem,
+         StyledCardTitle,
          StyledPriceItem, 
        } from './style';
 
-const RecommendedCard = () => {
+const RecommendedCard = ({image, title, icon, text}) => {
 
     const { Text, Title } = Typography;
-    const { Link } = Anchor;
 
     return (
       <StyledCardWrapper>
         <StyledCardImage>
           <Image
             width={210}
-            src={des2}
+            src={image}
           />
         </StyledCardImage>
-        <StyledCardDetails>
+        <StyledCardDetails className={!icon && 'align'}>
           <StyledCardTitle>
-            <Text>
+            { text &&
+              <Text>
               12Km * 1 h 30 min
-            </Text>
-            <Title level={5}>Pantai Nusa Penida</Title>
+              </Text>
+            }
+            <Title level={5}>{title}</Title>
             <Text>
               <LocationCurvedIcon />
               Indonesia, Bali
             </Text>
           </StyledCardTitle>
-          <StyledPriceItem>
+          {icon ? 
+            icon :
+            <StyledPriceItem>
             <Text>
               $ 20
             </Text>
           </StyledPriceItem>
+          }
         </StyledCardDetails>
       </StyledCardWrapper>
     );
 }
 
 RecommendedCard.propTypes = {
+  image: PropTypes.string,
+  title: PropTypes.string,
+  icon: PropTypes.node,
+  text: PropTypes.string,
 }
 
 export default RecommendedCard;

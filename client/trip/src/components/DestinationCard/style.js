@@ -27,6 +27,12 @@ export const StyledCardDetails = Styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 10px 5px 0;
+  .ant-anchor-ink {
+    display: none;
+  }
+  .ant-anchor-link {
+    padding: 0;
+  }
 `;
 
 export const StyledCardTitle = Styled.div`

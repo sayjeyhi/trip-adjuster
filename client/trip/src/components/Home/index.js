@@ -1,6 +1,8 @@
 import React from 'react';
 import { Row, Col } from 'antd';
 
+import des2 from '../../assets/images/Destination-2.jpeg';
+
 import Header from './../Header';
 import Search from './../Search';
 import Navbar from './../Navbar';
@@ -23,7 +25,7 @@ const Home = () => {
             <CardHeader title="Best Destination" />
             <DestinationItems />
             <CardHeader title="Recommended" />
-            <RecommendedCard />
+            <RecommendedCard image={des2} title="Pantai Nusa Penida" />
             <Footer />
           </StyledHomeWrapper>
         </Col>

@@ -31,7 +31,9 @@ const DestinationCard = () => {
         </StyledCardImage>
         <StyledCardDetails>
           <StyledCardTitle>
-            <Title level={5}>Bukit Raya</Title>
+            <Anchor affix={false} >
+              <Link href="details/?id=3" title={<Title level={5}>Bukit Raya</Title>} />
+            </Anchor>
             <Text>
               <LocationCurvedIcon />
               Indonesia, Bali

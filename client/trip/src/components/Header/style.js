@@ -45,4 +45,23 @@ export const StyledIconWrapper = Styled.div`
     align-items: center;
     justify-content: center;
     background-color: #fef7f0;
+    button {
+        background-color: #fef7f0;
+        border-color: #fef7f0;
+        box-shadow: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+            fill: black;
+        }
+        &:hover {
+            background-color: #fef7f0;
+            border-color: #fef7f0;
+        }
+        &:focus {
+            background-color: #fef7f0;
+            border-color: #fef7f0;
+        }
+    }
 `;

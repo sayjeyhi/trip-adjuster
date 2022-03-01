@@ -8,6 +8,7 @@ import { StyledCardWrapper,
          StyledCardDetails, 
          StyledCardTitle,
          StyledPriceItem, 
+         StyledIconWrapper,
        } from './style';
 
 const RecommendedCard = ({image, title, icon, text}) => {
@@ -35,13 +36,16 @@ const RecommendedCard = ({image, title, icon, text}) => {
               Indonesia, Bali
             </Text>
           </StyledCardTitle>
-          {icon ? 
-            icon :
+          { icon ? 
+            <StyledIconWrapper>
+              {icon}
+            </StyledIconWrapper>
+            :
             <StyledPriceItem>
-            <Text>
-              $ 20
-            </Text>
-          </StyledPriceItem>
+              <Text>
+                $ 20
+              </Text>
+            </StyledPriceItem>
           }
         </StyledCardDetails>
       </StyledCardWrapper>

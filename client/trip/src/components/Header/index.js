@@ -1,6 +1,7 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Row, Col, Typography, Avatar } from 'antd';
+import { Typography, Avatar, Button } from 'antd';
 import avatar from '../../assets/images/avatar.jpeg';
 import { BellOIcon } from '@iconbox/fa4';
 import { ArrowIosBackOutlineIcon } from '@iconbox/eva'; 
@@ -11,8 +12,11 @@ import { StyledHeaderWrapper,
          StyledIconWrapper,
         } from './style';
 
-const Header = ({type,title}) => {
+const Header = ({type,title,icon}) => {
+
+    const navigate = useNavigate();
     const { Title } = Typography;
+
     return (
       <StyledHeaderWrapper>
         {type === 'profile' ?
@@ -26,24 +30,31 @@ const Header = ({type,title}) => {
           :
         <>
           <StyledIconWrapper>
-            <ArrowIosBackOutlineIcon />
+            <Button type="primary" shape="circle" onClick={() => navigate(-1)} icon={<ArrowIosBackOutlineIcon />} />
           </StyledIconWrapper>
           <StyledUserName className="flexGrow">
             <Title level={4}>{title}</Title>
           </StyledUserName>
         </>
         }
-        <StyledNotification className={type === 'profile' && 'flexGrow'}>
+        {icon ?
           <StyledIconWrapper>
-            <BellOIcon />
+            <Button type="primary" shape="circle" icon={icon} />
           </StyledIconWrapper>
-        </StyledNotification>
+          :
+          <StyledNotification className={type === 'profile' && 'flexGrow'}>
+            <StyledIconWrapper>
+              <Button type="primary" shape="circle" icon={<BellOIcon />} />
+            </StyledIconWrapper>
+          </StyledNotification>
+        }
       </StyledHeaderWrapper>
     );
 }
 Header.propTypes = {
   type: PropTypes.string,
   title: PropTypes.string,
+  icon: PropTypes.string,
 }
 
 export default Header;

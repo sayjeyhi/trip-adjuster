@@ -4,6 +4,7 @@ export const StyledCardWrapper = Styled.div`
   display: flex;
   flex-direction: column;
   padding: 10px;
+  margin-right: 20px;
   background-color: #fff;
   border-radius: 15px;
   width: 230px;

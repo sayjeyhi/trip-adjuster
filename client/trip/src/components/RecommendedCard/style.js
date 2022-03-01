@@ -89,3 +89,12 @@ export const StyledPriceItem = Styled.div`
   }
 `;
 
+export const StyledIconWrapper = Styled.div`
+  svg {
+    path {
+      fill: #fa9e51 !important;
+      stroke: #fa9e51;
+    }
+  }
+`;
+

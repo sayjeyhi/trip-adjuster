@@ -7,7 +7,7 @@ export const StyledFooterWrapper = Styled.div`
   background-color: #fff;
   height: 65px;
   margin: 20px 0 0;
-  border-radius: 0 0 2rem 2rem;
+  border-radius: 0 0 20px 20px;
   .ant-anchor {
     display: flex;
   }

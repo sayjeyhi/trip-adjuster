@@ -25,8 +25,8 @@ const Home = () => {
             <CardHeader title="Best Destination" />
             <DestinationItems />
             <CardHeader title="Recommended" />
-            <RecommendedCard image={des2} title="Pantai Nusa Penida" />
-            <Footer />
+            <RecommendedCard image={des2} title="Pantai Nusa Penida" text="12Km * 1 h 30 min" />
+            <Footer title="home" />
           </StyledHomeWrapper>
         </Col>
       </Row>

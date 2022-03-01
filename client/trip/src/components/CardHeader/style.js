@@ -4,7 +4,7 @@ export const StyledCardHeaderWrapper = Styled.div`
   display: flex;
   justify-content: space-between;
   margin: 10px 20px;
-  h4 {
+  h5 {
     margin-bottom: 0;
   }
   .ant-anchor-ink {

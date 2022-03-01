@@ -4,7 +4,7 @@ export const StyledCardWrapper = Styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
-  margin: 0 20px;
+  margin: 0 20px 20px;
   padding: 10px;
   background-color: #fff;
   border-radius: 15px;
@@ -40,6 +40,11 @@ export const StyledCardTitle = Styled.div`
     text-align: left;
     margin-bottom: 0;
     margin-top: 0 !important;
+  }
+  svg {
+    path {
+      stroke: #bebebe;
+    }
   }
   span {
     display: flex;

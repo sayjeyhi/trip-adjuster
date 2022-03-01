@@ -27,7 +27,7 @@ const RecommendedCard = ({image, title, icon, text}) => {
           <StyledCardTitle>
             { text &&
               <Text>
-              12Km * 1 h 30 min
+              {text}
               </Text>
             }
             <Title level={5}>{title}</Title>
@@ -56,7 +56,7 @@ RecommendedCard.propTypes = {
   image: PropTypes.string,
   title: PropTypes.string,
   icon: PropTypes.node,
-  text: PropTypes.string,
+  text: PropTypes.node,
 }
 
 export default RecommendedCard;

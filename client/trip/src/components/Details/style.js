@@ -153,7 +153,7 @@ export const StyledHeaderWrapper = Styled.div`
   position: absolute;
   left: 0;
   right: 0;
-  top: 20px;
+  top: 30px;
   h4 {
       color: #fff;
   }

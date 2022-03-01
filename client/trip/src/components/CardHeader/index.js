@@ -11,7 +11,7 @@ const CardHeader = ({title}) => {
 
     return (
       <StyledCardHeaderWrapper>
-        <Title level={4}>{title}</Title>
+        <Title level={5}>{title}</Title>
         <Anchor affix={false} className="header-card" >
           <Link href="#" title="view all" />
         </Anchor>

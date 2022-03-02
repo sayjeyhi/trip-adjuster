@@ -1,20 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Typography, Input, Anchor } from 'antd';
-import { SearchLightIcon } from '@iconbox/iconly';
+import { NavLink } from "react-router-dom";
+import { Typography } from 'antd';
 
 import { StyledCardHeaderWrapper } from './style';
 
 const CardHeader = ({title, link}) => {
-    const { Text, Title } = Typography;
-    const { Link } = Anchor;
+    const { Title } = Typography;
 
     return (
       <StyledCardHeaderWrapper>
         <Title level={5}>{title}</Title>
-        <Anchor affix={false} className="header-card" >
-          <Link href={link} title="view all" />
-        </Anchor>
+        <NavLink to={link} >
+          view all
+        </NavLink>
       </StyledCardHeaderWrapper>
     );
 }

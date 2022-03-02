@@ -5,5 +5,10 @@ export const StyledDestinationItemsWrapper = Styled.div`
   margin-left: 20px;
   margin-bottom: 20px;
   overflow: auto;
+  .destination-items {
+    .swiper-slide {
+      margin-right: 20px;
+    }
+  }
 `;
 

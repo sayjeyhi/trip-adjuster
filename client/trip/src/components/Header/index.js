@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Typography, Avatar, Button } from 'antd';
 import avatar from '../../assets/images/avatar.jpeg';
@@ -18,7 +18,7 @@ const Header = ({type,title,icon}) => {
     const { Title } = Typography;
 
     return (
-      <StyledHeaderWrapper>
+      <StyledHeaderWrapper className="header">
         {type === 'profile' ?
         <>
           <Avatar src={avatar} style={{ width: 40, height: 40 }} />
@@ -43,9 +43,11 @@ const Header = ({type,title,icon}) => {
           </StyledIconWrapper>
           :
           <StyledNotification className={type === 'profile' && 'flexGrow'}>
-            <StyledIconWrapper>
-              <Button type="primary" shape="circle" icon={<BellOIcon />} />
-            </StyledIconWrapper>
+            <NavLink to="/notifications" >
+              <StyledIconWrapper>
+                <Button type="primary" shape="circle" icon={<BellOIcon />} />
+              </StyledIconWrapper>
+            </NavLink>
           </StyledNotification>
         }
       </StyledHeaderWrapper>

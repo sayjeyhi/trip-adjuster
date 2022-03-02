@@ -8,16 +8,7 @@ export const StyledFooterWrapper = Styled.div`
   height: 65px;
   margin: 20px 0 0;
   border-radius: 0 0 20px 20px;
-  .ant-anchor {
-    display: flex;
-  }
-  .ant-anchor-wrapper {
-    margin-left: 0;
-  }
-  .ant-anchor-ink {
-    display: none;
-  }
-  .ant-anchor-link {
+  a {
     padding: 0;
     width: 25%;
     svg {

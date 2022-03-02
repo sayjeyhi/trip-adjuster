@@ -1,7 +1,8 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 import { Image, Typography, Anchor } from 'antd';
 import { LocationCurvedIcon, StarCurvedIcon } from '@iconbox/iconly'; 
-import des3 from '../../assets/images/Destination-3.jpeg';
+import des5 from '../../assets/images/Destination-5.jpeg';
 
 import { StyledCardWrapper, 
          StyledCardImage, 
@@ -17,11 +18,10 @@ const DestinationCard = () => {
     const { Link } = Anchor;
 
     return (
-      <StyledCardWrapper>
+      <StyledCardWrapper className="destination-card">
         <StyledCardImage>
           <Image
-            width={210}
-            src={des3}
+            src={des5}
           />
           <StyledPriceItem>
             <Text>
@@ -31,9 +31,9 @@ const DestinationCard = () => {
         </StyledCardImage>
         <StyledCardDetails>
           <StyledCardTitle>
-            <Anchor affix={false} >
-              <Link href="details/?id=3" title={<Title level={5}>Bukit Raya</Title>} />
-            </Anchor>
+            <NavLink to="details/?id=3" >
+              <Title level={5}>Bukit Raya</Title>
+            </NavLink>
             <Text>
               <LocationCurvedIcon />
               Indonesia, Bali

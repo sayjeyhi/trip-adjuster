@@ -12,15 +12,16 @@ export const StyledCardWrapper = Styled.div`
 
 export const StyledCardImage = Styled.div`
   display: flex;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   position: relative;
   .ant-image-mask {
     border-radius: 15px;
   }
   img {
     border-radius: 10px;
-    height: 80px;
+    height: 100px;
+    width: 100px;
   }
 `;
 

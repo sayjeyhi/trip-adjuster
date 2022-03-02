@@ -10,10 +10,7 @@ import des6 from '../../assets/images/Destination-6.jpeg';
 import { CalendarLightIcon, TicketStarLightIcon } from '@iconbox/iconly'; 
 
 import Header from './../Header';
-import Search from './../Search';
-import Navbar from './../Navbar';
 import CardHeader from './../CardHeader';
-import DestinationItems from './../DestinationItems';
 import RecommendedCard from './../RecommendedCard';
 import Footer from "./../Footer";
 
@@ -30,11 +27,11 @@ const Schedule = () => {
       <Row className="ant-row ant-row-center">
         <Col span={12}>
           <StyledScheduleWrapper>
-            <Header title="Schedule"  />
+            <Header title="Schedule" type="Schedule" />
             <StyledDatePickerWrapper>
               <DatePicker onChange={onChange} />
             </StyledDatePickerWrapper>
-            <CardHeader title="My Schedule" />
+            <CardHeader title="My Schedule" link="/recommended" />
             <RecommendedCard image={des4} icon={<TicketStarLightIcon />} title="Pantai Nusa Penida" text={[<CalendarLightIcon />, "22 jun 2022"]} />
             <RecommendedCard image={des5} icon={<TicketStarLightIcon />} title="Pantai Tanah Lot" text={[<CalendarLightIcon />, "22 jun 2022"]} />
             <RecommendedCard image={des6} icon={<TicketStarLightIcon />} title="Pantai Nusa Dua" text={[<CalendarLightIcon />, "22 jun 2022"]} />

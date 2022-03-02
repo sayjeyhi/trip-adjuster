@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'antd';
 
-import des2 from '../../assets/images/Destination-2.jpeg';
+import des1 from '../../assets/images/Destination-1.jpeg';
 
 import Header from './../Header';
 import Search from './../Search';
@@ -17,7 +17,7 @@ const Home = () => {
     return (
     <>
       <Row className="ant-row ant-row-center">
-        <Col span={12}>
+        <Col span={10}>
           <StyledHomeWrapper>
             <Header type="profile" title="Schedule"  />
             <Search />
@@ -25,7 +25,7 @@ const Home = () => {
             <CardHeader title="Best Destination" link="/destinations" />
             <DestinationItems />
             <CardHeader title="Recommended" link="/recommended" />
-            <RecommendedCard image={des2} title="Pantai Nusa Penida" text="12Km * 1 h 30 min" />
+            <RecommendedCard image={des1} title="Pantai Nusa Penida" text="12Km * 1 h 30 min" />
             <Footer title="home" />
           </StyledHomeWrapper>
         </Col>

@@ -16,7 +16,16 @@ const DestinationItems = () => {
 
     return (
       <StyledDestinationItemsWrapper>
-        <Swiper slidesPerView={1.5} >
+        <Swiper slidesPerView={1.5} className="destination-items" >
+          <SwiperSlide>
+            <DestinationCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <DestinationCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <DestinationCard />
+          </SwiperSlide>
           <SwiperSlide>
             <DestinationCard />
           </SwiperSlide>

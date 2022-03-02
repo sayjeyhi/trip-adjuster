@@ -7,7 +7,7 @@ export const StyledCardWrapper = Styled.div`
   margin-right: 20px;
   background-color: #fff;
   border-radius: 15px;
-  width: 230px;
+  width: 100%;
 `;
 
 export const StyledCardImage = Styled.div`
@@ -19,7 +19,6 @@ export const StyledCardImage = Styled.div`
   }
   img {
     border-radius: 15px;
-    height: 150px;
   }
 `;
 

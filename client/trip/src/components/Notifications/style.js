@@ -9,16 +9,15 @@ export const StyledDestinationsWrapper = Styled.div`
   margin-bottom: 20px;
   overflow: auto;
   padding: 0;
-  .header {
-    margin: 40px 0 20px 0;
-    padding: 0 20px !important;
-    width: 100%;
+  > h5 {
+    padding-top: 20px;
   }
   .footer {
     width: 100%;
   }
-  .recommended-card {
-    margin: 0 0 20px;
+  .header {
+    margin: 40px 0 20px 0;
+    padding: 0 20px !important;
     width: 100%;
     .ant-image {
       width: 100% !important;
@@ -27,10 +26,8 @@ export const StyledDestinationsWrapper = Styled.div`
         width: 80px;
       }
     }
+    &:first-child {
+      padding: 0;
+    }
   }
-`;
-
-export const StyledContentWrapper = Styled.div`
-  padding: 0 20px;
-  width: 100%;
 `;

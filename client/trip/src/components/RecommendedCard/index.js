@@ -16,10 +16,9 @@ const RecommendedCard = ({image, title, icon, text}) => {
     const { Text, Title } = Typography;
 
     return (
-      <StyledCardWrapper>
+      <StyledCardWrapper className="recommended-card">
         <StyledCardImage>
           <Image
-            width={210}
             src={image}
           />
         </StyledCardImage>

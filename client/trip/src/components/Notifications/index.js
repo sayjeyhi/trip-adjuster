@@ -6,15 +6,22 @@ import { MoreHorizontalFillIcon } from '@iconbox/eva';
 
 import Header from '../Header';
 import Footer from '../Footer';
-import DestinationCard from './../DestinationCard';
+import RecommendedCard from './../RecommendedCard';
 
+import des1 from '../../assets/images/Destination-1.jpeg';
+import des2 from '../../assets/images/Destination-2.jpeg';
 import des3 from '../../assets/images/Destination-3.jpeg';
+import des4 from '../../assets/images/Destination-4.jpeg';
+import des5 from '../../assets/images/Destination-5.jpeg';
+import des6 from '../../assets/images/Destination-6.jpeg';
+import des7 from '../../assets/images/Destination-7.jpeg';
 
 import { StarCurvedIcon, LocationCurvedIcon } from '@iconbox/iconly'; 
 
-import { StyledDestinationsWrapper, StyledContentWrapper } from './style';
+import { StyledDestinationsWrapper, 
+        } from './style';
 
-const Destinations = () => {
+const Notifications = () => {
 
     const [showMore, setShowMore] = useState(false);
     const { Text, Title } = Typography;
@@ -29,16 +36,8 @@ const Destinations = () => {
       <Row className="ant-row ant-row-center">
         <Col span={12}>
           <StyledDestinationsWrapper>
-            <Header type="Destinations" title="Destinations" />
-            <StyledContentWrapper>
-              <DestinationCard />
-              <DestinationCard />
-              <DestinationCard />
-              <DestinationCard />
-              <DestinationCard />
-              <DestinationCard />
-              <DestinationCard />
-            </StyledContentWrapper>
+            <Header type="Notifications" title="Notifications" />
+            <Title level={5} >There is'nt any Notification now</Title>
             <Footer />
           </StyledDestinationsWrapper>
         </Col>
@@ -47,4 +46,4 @@ const Destinations = () => {
     );
 }
 
-export default Destinations;
+export default Notifications;

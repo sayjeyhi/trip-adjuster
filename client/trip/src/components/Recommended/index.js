@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Row, Col, Image, Typography, Button } from 'antd';
+import { Row, Col } from 'antd';
 
-import { GpsFIcon } from '@iconbox/jamicons';
-import { MoreHorizontalFillIcon } from '@iconbox/eva'; 
 
 import Header from '../Header';
+import Footer from '../Footer'; 
 import RecommendedCard from './../RecommendedCard';
 
 import des1 from '../../assets/images/Destination-1.jpeg';
@@ -15,20 +14,11 @@ import des5 from '../../assets/images/Destination-5.jpeg';
 import des6 from '../../assets/images/Destination-6.jpeg';
 import des7 from '../../assets/images/Destination-7.jpeg';
 
-import { StarCurvedIcon, LocationCurvedIcon } from '@iconbox/iconly'; 
-
-import { StyledDestinationsWrapper, 
-        } from './style';
+import { StyledDestinationsWrapper, StyledContentWrapper } from './style';
 
 const Recommended = () => {
 
     const [showMore, setShowMore] = useState(false);
-    const { Text, Title } = Typography;
-
-    const handleShowMore = (e) => {
-        e.preventDefault();
-        setShowMore(!showMore);
-    }
 
     return (
     <>
@@ -36,13 +26,16 @@ const Recommended = () => {
         <Col span={12}>
           <StyledDestinationsWrapper>
             <Header type="Recommended" title="Recommended" />
-            <RecommendedCard image={des1} title="Pantai Nusa Penida" text="12Km * 1 h 30 min" />
-            <RecommendedCard image={des2} title="Pantai Nusa Penida" text="12Km * 1 h 30 min" />
-            <RecommendedCard image={des3} title="Pantai Nusa Penida" text="12Km * 1 h 30 min" />
-            <RecommendedCard image={des4} title="Pantai Nusa Penida" text="12Km * 1 h 30 min" />
-            <RecommendedCard image={des5} title="Pantai Nusa Penida" text="12Km * 1 h 30 min" />
-            <RecommendedCard image={des6} title="Pantai Nusa Penida" text="12Km * 1 h 30 min" />
-            <RecommendedCard image={des7} title="Pantai Nusa Penida" text="12Km * 1 h 30 min" />
+            <StyledContentWrapper>
+              <RecommendedCard image={des1} title="Pantai Nusa Penida" text="12Km * 1 h 30 min" />
+              <RecommendedCard image={des2} title="Pantai Nusa Penida" text="12Km * 1 h 30 min" />
+              <RecommendedCard image={des3} title="Pantai Nusa Penida" text="12Km * 1 h 30 min" />
+              <RecommendedCard image={des4} title="Pantai Nusa Penida" text="12Km * 1 h 30 min" />
+              <RecommendedCard image={des5} title="Pantai Nusa Penida" text="12Km * 1 h 30 min" />
+              <RecommendedCard image={des6} title="Pantai Nusa Penida" text="12Km * 1 h 30 min" />
+              <RecommendedCard image={des7} title="Pantai Nusa Penida" text="12Km * 1 h 30 min" />
+            </StyledContentWrapper>
+            <Footer />
           </StyledDestinationsWrapper>
         </Col>
       </Row>

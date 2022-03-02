@@ -10,10 +10,8 @@ export const StyledCardHeaderWrapper = Styled.div`
   .ant-anchor-ink {
     height: 0;
   }
-  .header-card {
-    a {
-      color: #888;
-    }
+  a {
+    color: #888;
   }
 `;
 

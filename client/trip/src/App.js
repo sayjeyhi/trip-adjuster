@@ -12,6 +12,8 @@ import Details from './components/Details';
 import Schedule from './components/Schedule';
 import Destinations from './components/Destinations';
 import Recommended from './components/Recommended';
+import Discounts from './components/Discounts';
+import Notifications from './components/Notifications';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/destinations" element={<Destinations />} />
           <Route path="/recommended" element={<Recommended />} />
+          <Route path="/discounts" element={<Discounts />} />
+          <Route path="/notifications" element={<Notifications />} />
         </Routes>
       </div>
     </Router>

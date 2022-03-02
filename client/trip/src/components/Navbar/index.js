@@ -1,27 +1,45 @@
 import React from 'react';
-import { Typography, Anchor } from 'antd';
-import { SearchLightIcon } from '@iconbox/iconly';
+import { NavLink } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import { StyledNavbarWrapper } from './style';
 
 const Navbar = () => {
-    const { Text } = Typography;
-    const { Link } = Anchor;
 
     return (
       <StyledNavbarWrapper>
-        <Anchor affix={false} className="header-card" >
-          <Link href="#" title="Jakarta" className="active" />
-          <Link href="#" title="Bali" />
-          <Link href="#" title="Jakarta" />
-          <Link href="#" title="Bali" />
-          <Link href="#" title="Jakarta" />
-          <Link href="#" title="Bali" />
-          <Link href="#" title="Jakarta" />
-          <Link href="#" title="Bali" />
-          <Link href="#" title="Jakarta" />
-          <Link href="#" title="Bali" />
-        </Anchor>
+        <Swiper slidesPerView={6.5} className="destination-items" >
+          <SwiperSlide>
+            <NavLink to="/" className="highlight" >Jakarta</NavLink>
+          </SwiperSlide>
+          <SwiperSlide>
+            <NavLink to="/" >Surabaya</NavLink>
+          </SwiperSlide>
+          <SwiperSlide>
+            <NavLink to="/" >Jakarta</NavLink>
+          </SwiperSlide>
+          <SwiperSlide>
+            <NavLink to="/" >Bandung</NavLink>
+          </SwiperSlide>
+          <SwiperSlide>
+            <NavLink to="/" >Jakarta</NavLink>
+          </SwiperSlide>
+          <SwiperSlide>
+            <NavLink to="/" >Surabaya</NavLink>
+          </SwiperSlide>
+          <SwiperSlide>
+            <NavLink to="/" >Jakarta</NavLink>
+          </SwiperSlide>
+          <SwiperSlide>
+            <NavLink to="/" >Mayadana</NavLink>
+          </SwiperSlide>
+          <SwiperSlide>
+            <NavLink to="/" >Jakarta</NavLink>
+          </SwiperSlide>
+          <SwiperSlide>
+            <NavLink to="/" >Surabaya</NavLink>
+          </SwiperSlide>
+        </Swiper>
       </StyledNavbarWrapper>
     );
 }

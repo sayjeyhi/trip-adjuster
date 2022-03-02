@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { NavLink } from "react-router-dom";
 import { Typography } from 'antd';
 import { HomeCurvedIcon, TicketStarLightIcon, CalendarLightIcon, AddUserCurvedIcon } from '@iconbox/iconly';
-import { PersonOutlineIcon } from '@iconbox/eva';
 
 import { StyledFooterWrapper } from './style';
 

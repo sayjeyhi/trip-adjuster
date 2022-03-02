@@ -18,12 +18,10 @@ import { StyledDestinationsWrapper, StyledContentWrapper } from './style';
 
 const Recommended = () => {
 
-    const [showMore, setShowMore] = useState(false);
-
     return (
     <>
       <Row className="ant-row ant-row-center">
-        <Col span={12}>
+        <Col span={10}>
           <StyledDestinationsWrapper>
             <Header type="Recommended" title="Recommended" />
             <StyledContentWrapper>

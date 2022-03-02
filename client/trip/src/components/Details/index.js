@@ -37,7 +37,7 @@ const Details = () => {
     return (
     <>
       <Row className="ant-row ant-row-center">
-        <Col span={12}>
+        <Col span={10}>
           <StyledDetailsWrapper>
             <StyledCardImage>
                 <Image

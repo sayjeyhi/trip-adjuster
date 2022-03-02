@@ -14,6 +14,7 @@ import Destinations from './components/Destinations';
 import Recommended from './components/Recommended';
 import Discounts from './components/Discounts';
 import Notifications from './components/Notifications';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/recommended" element={<Recommended />} />
           <Route path="/discounts" element={<Discounts />} />
           <Route path="/notifications" element={<Notifications />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </Router>

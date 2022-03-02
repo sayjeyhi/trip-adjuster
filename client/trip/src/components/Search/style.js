@@ -1,7 +1,7 @@
 import Styled from 'styled-components';
 
 export const StyledSearchWrapper = Styled.div`
-  margin: 30px 20px 0;
+  margin: 30px 20px 30px;
   position: relative;
   .search {
     border-radius: 30px;

@@ -1,16 +1,13 @@
 import React from 'react';
-import { Typography, Anchor } from 'antd';
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
 import DestinationCard from '../DestinationCard';
 
-import { StyledDestinationItemsWrapper, 
-       } from './style';
+import { StyledDestinationItemsWrapper } from './style';
 
 const DestinationItems = () => {
 

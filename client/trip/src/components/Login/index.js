@@ -1,17 +1,27 @@
 import React from 'react';
-import { Typography, Anchor } from 'antd';
-import { SearchLightIcon } from '@iconbox/iconly';
 
-import { StyledLoginWrapper } from './style';
+import { Typography, Row, Col, Input, Button } from 'antd';
+
+import CardHeader from '../CardHeader';
+
+import { StyledLoginWrapper, StyledFormWrapper } from './style';
 
 const Login = () => {
-    const { Text } = Typography;
-    const { Link } = Anchor;
+    const { Title } = Typography;
 
     return (
-      <StyledLoginWrapper>
-        
-      </StyledLoginWrapper>
+      <Row className="ant-row ant-row-center">
+        <Col span={10}>
+          <StyledLoginWrapper>
+            <Title level={3}>Login</Title>
+            <StyledFormWrapper>
+              <Input placeholder="username" />
+              <Input placeholder="password" />
+              <Button type="primary" shape="round" >Login</Button>
+            </StyledFormWrapper>
+          </StyledLoginWrapper>
+        </Col>
+      </Row>
     );
 }
 

@@ -3,6 +3,7 @@ import Styled from 'styled-components';
 export const StyledDetailsWrapper = Styled.div`
     background-color: #f8f8f8;
     border-radius: 20px;
+    height: 100vh;
 `;  
 
 export const StyledCardImage = Styled.div`
@@ -180,6 +181,9 @@ export const StyledContentWrapper = Styled.div`
 export const StyledFooterWrapper = Styled.div`
   display: flex;
   align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   justify-content: space-between;
   flex-direction: row;
   background-color: #fff;

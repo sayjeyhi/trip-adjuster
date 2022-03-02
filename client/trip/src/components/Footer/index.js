@@ -20,7 +20,7 @@ const Footer = ({title}) => {
         <NavLink to="/schedule" className={title === 'schedule' && 'active'} >
           <CalendarLightIcon size={2} />
         </NavLink>
-        <NavLink to="/user" className={title === 'user' && 'active'} >
+        <NavLink to="/login" className={title === 'user' && 'active'} >
           <AddUserCurvedIcon size={2} />
         </NavLink>
       </StyledFooterWrapper>

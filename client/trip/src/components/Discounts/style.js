@@ -9,11 +9,14 @@ export const StyledDestinationsWrapper = Styled.div`
   margin-bottom: 20px;
   overflow: auto;
   padding: 0;
+  height: 100vh;
   > h5 {
     padding-top: 20px;
   }
   .footer {
     width: 100%;
+    position: absolute;
+    bottom: 0;
   }
   .header {
     margin: 40px 0 20px 0;

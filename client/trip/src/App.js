@@ -10,6 +10,8 @@ import 'antd/dist/antd.css';
 import Home from './components/Home';
 import Details from './components/Details';
 import Schedule from './components/Schedule';
+import Destinations from './components/Destinations';
+import Recommended from './components/Recommended';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/details" element={<Details />} />
           <Route path="/schedule" element={<Schedule />} />
+          <Route path="/destinations" element={<Destinations />} />
+          <Route path="/recommended" element={<Recommended />} />
         </Routes>
       </div>
     </Router>

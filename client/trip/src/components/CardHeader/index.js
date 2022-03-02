@@ -5,7 +5,7 @@ import { SearchLightIcon } from '@iconbox/iconly';
 
 import { StyledCardHeaderWrapper } from './style';
 
-const CardHeader = ({title}) => {
+const CardHeader = ({title, link}) => {
     const { Text, Title } = Typography;
     const { Link } = Anchor;
 
@@ -13,7 +13,7 @@ const CardHeader = ({title}) => {
       <StyledCardHeaderWrapper>
         <Title level={5}>{title}</Title>
         <Anchor affix={false} className="header-card" >
-          <Link href="#" title="view all" />
+          <Link href={link} title="view all" />
         </Anchor>
       </StyledCardHeaderWrapper>
     );
@@ -21,6 +21,7 @@ const CardHeader = ({title}) => {
 
 CardHeader.propTypes = {
   title: PropTypes.string,
+  link: PropTypes.string,
 }
 
 export default CardHeader;

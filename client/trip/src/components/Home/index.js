@@ -22,9 +22,9 @@ const Home = () => {
             <Header type="profile" title="Schedule"  />
             <Search />
             <Navbar />
-            <CardHeader title="Best Destination" />
+            <CardHeader title="Best Destination" link="/destinations" />
             <DestinationItems />
-            <CardHeader title="Recommended" />
+            <CardHeader title="Recommended" link="/recommended" />
             <RecommendedCard image={des2} title="Pantai Nusa Penida" text="12Km * 1 h 30 min" />
             <Footer title="home" />
           </StyledHomeWrapper>

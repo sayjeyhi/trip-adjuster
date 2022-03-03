@@ -169,9 +169,15 @@ export const StyledContentWrapper = Styled.div`
       text-align: left;
       font-size: 12px; 
       color: #bababa;
+      height: 75px;
+      overflow: hidden;
+      &.full-text {
+        height: 100%;
+      }
   }
   .more {
       color: #fa9e51;
+      font-size: 12px;
       &:hover {
           color: #fa9e51;
       }
@@ -220,4 +226,8 @@ export const StyledFooterWrapper = Styled.div`
   .header-card {
     width: 100%;
   }
+`;
+
+export const StyledLoadingWrapper = Styled.div`
+  
 `;

@@ -20,6 +20,11 @@ export const StyledFormWrapper = Styled.div`
     border-radius: 25px;
     height: 40px;
   }
+  span {
+    margin-bottom: 10px;
+    border-radius: 25px;
+    height: 40px;
+  }
   button {
     margin-top: 20px;
     background-color: #fa9e51;

@@ -54,7 +54,7 @@ const DestinationCard = (item) => {
         </StyledCardImage>
         <StyledCardDetails>
           <StyledCardTitle>
-            <NavLink to="details/?id=3" >
+            <NavLink to={`details/?id=${id}`} >
               <Title level={5}>{name}</Title>
             </NavLink>
             <Text>

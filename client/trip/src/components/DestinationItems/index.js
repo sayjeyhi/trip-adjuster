@@ -31,7 +31,7 @@ const DestinationItems = () => {
   } else {
     return (
       <StyledLoadingWrapper>
-        ... loading
+        loading ...
       </StyledLoadingWrapper>
     )
   }

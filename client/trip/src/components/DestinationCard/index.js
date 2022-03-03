@@ -1,8 +1,18 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
-import { Image, Typography, Anchor } from 'antd';
+import PropTypes from 'prop-types';
+import { Image, Typography } from 'antd';
 import { LocationCurvedIcon, StarCurvedIcon } from '@iconbox/iconly'; 
+
+import des1 from '../../assets/images/Destination-1.jpeg';
+import des2 from '../../assets/images/Destination-2.jpeg';
+import des3 from '../../assets/images/Destination-3.jpeg';
+import des4 from '../../assets/images/Destination-4.jpeg';
 import des5 from '../../assets/images/Destination-5.jpeg';
+import des6 from '../../assets/images/Destination-6.jpeg';
+import des7 from '../../assets/images/Destination-7.jpeg';
+import des8 from '../../assets/images/Destination-8.jpeg';
+import des9 from '../../assets/images/Destination-9.jpeg';
 
 import { StyledCardWrapper, 
          StyledCardImage, 
@@ -12,37 +22,50 @@ import { StyledCardWrapper,
          StyledPriceItem, 
        } from './style';
 
-const DestinationCard = () => {
+const DestinationCard = (item) => {
 
     const { Text, Title } = Typography;
-    const { Link } = Anchor;
+    console.log(item.item);
+    const { name, id, price, star, city, country } = item.item;
 
+    const images = {
+      img1: des3,
+      img2: des2, 
+      img3: des1, 
+      img4: des4, 
+      img5: des5, 
+      img6: des6, 
+      img7: des7, 
+      img8: des8, 
+      img9: des9, 
+    } 
+   
     return (
-      <StyledCardWrapper className="destination-card">
+      <StyledCardWrapper className="destination-card" id={id}>
         <StyledCardImage>
           <Image
-            src={des5}
+            src={images[`img${id}`]}
           />
           <StyledPriceItem>
             <Text>
-              $ 20
+              $ {price}
             </Text>
           </StyledPriceItem>
         </StyledCardImage>
         <StyledCardDetails>
           <StyledCardTitle>
             <NavLink to="details/?id=3" >
-              <Title level={5}>Bukit Raya</Title>
+              <Title level={5}>{name}</Title>
             </NavLink>
             <Text>
               <LocationCurvedIcon />
-              Indonesia, Bali
+              {country}, {city}
             </Text>
           </StyledCardTitle>
           <StyledRateItem>
             <Text>
               <StarCurvedIcon />
-              4.8
+              {star}
             </Text>
           </StyledRateItem>
         </StyledCardDetails>
@@ -51,6 +74,7 @@ const DestinationCard = () => {
 }
 
 DestinationCard.propTypes = {
+  item: PropTypes.array,
 }
 
 export default DestinationCard;

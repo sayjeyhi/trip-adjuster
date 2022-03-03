@@ -5,6 +5,14 @@ import {
   Routes,
 } from "react-router-dom";
 
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  useQuery,
+  gql
+} from "@apollo/client";
+
 import 'antd/dist/antd.css';
 
 import Home from './components/Home';
@@ -16,9 +24,15 @@ import Discounts from './components/Discounts';
 import Notifications from './components/Notifications';
 import Login from './components/Login';
 
+const client = new ApolloClient({
+  uri: 'http://localhost:4000/graphql/',
+  cache: new InMemoryCache()
+});
+
 function App() {
   return (
-    <Router>
+    <ApolloProvider client={client}>
+      <Router>
       <div className="App font-face-gb">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -32,6 +46,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    </ApolloProvider>
   );
 }
 

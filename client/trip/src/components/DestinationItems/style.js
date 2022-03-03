@@ -11,4 +11,7 @@ export const StyledDestinationItemsWrapper = Styled.div`
     }
   }
 `;
+export const StyledLoadingWrapper = Styled.div`
+  
+`;
 

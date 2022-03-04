@@ -6,12 +6,11 @@ export const StyledDestinationItemsWrapper = Styled.div`
   margin-bottom: 20px;
   overflow: auto;
   .destination-items {
+    width: 100%;
     .swiper-slide {
       margin-right: 20px;
     }
   }
 `;
-export const StyledLoadingWrapper = Styled.div`
-  
-`;
+
 

@@ -5,3 +5,6 @@ export const StyledHomeWrapper = Styled.div`
     border-radius: 20px;
     padding: 50px 0 0;
 `;
+export const StyledLoadingWrapper = Styled.div`
+  
+`;

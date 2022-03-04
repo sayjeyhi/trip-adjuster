@@ -1,37 +1,46 @@
 import React, { useState } from 'react';
-import { Row, Col, Typography } from 'antd';
+import PropTypes from 'prop-types';
+import { Row, Col } from 'antd';
+
+import { useQuery } from "@apollo/client";
 
 import Header from '../Header';
 import Footer from '../Footer';
 import DestinationCard from './../DestinationCard';
+import { getDestinationsQuery } from '../queries/index';
 
-import { StyledDestinationsWrapper, StyledContentWrapper } from './style';
+import { StyledDestinationsWrapper, StyledContentWrapper, StyledLoadingWrapper } from './style';
 
 const Destinations = () => {
+    
+  const { loading, error, data } = useQuery(getDestinationsQuery);
 
-    const [showMore, setShowMore] = useState(false);
-
+  if (!loading) {
     return (
-    <>
       <Row className="ant-row ant-row-center">
         <Col span={10}>
           <StyledDestinationsWrapper>
             <Header type="Destinations" title="Destinations" />
             <StyledContentWrapper>
-              <DestinationCard />
-              <DestinationCard />
-              <DestinationCard />
-              <DestinationCard />
-              <DestinationCard />
-              <DestinationCard />
-              <DestinationCard />
+              {data.destinations.map(item => (
+                <DestinationCard item={item} />
+              ))}
             </StyledContentWrapper>
             <Footer />
           </StyledDestinationsWrapper>
         </Col>
       </Row>
-    </>
     );
+    } else { 
+      return (
+      <StyledLoadingWrapper>
+        loading ...
+      </StyledLoadingWrapper>
+    )
+    }
+}
+
+Destinations.propTypes = {
 }
 
 export default Destinations;

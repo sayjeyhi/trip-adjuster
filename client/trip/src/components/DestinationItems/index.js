@@ -1,5 +1,7 @@
-import React from 'react';
-import { useQuery } from "@apollo/client";
+import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
+
+import { context } from '../context/destinationContext';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -7,16 +9,13 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import DestinationCard from '../DestinationCard';
-import { getDestinationsQuery } from '../queries/index';
 
-import { StyledDestinationItemsWrapper, StyledLoadingWrapper } from './style';
+import { StyledDestinationItemsWrapper } from './style';
 
 const DestinationItems = () => {
 
-  const { loading, error, data } = useQuery(getDestinationsQuery);
+  const {destinations} = useContext(context);
   
-  if (!loading) {
-    const destinations = data.destinations;
     return (
       <StyledDestinationItemsWrapper>
         <Swiper slidesPerView={1.5} className="destination-items" >
@@ -28,16 +27,10 @@ const DestinationItems = () => {
         </Swiper>
       </StyledDestinationItemsWrapper>
     );
-  } else {
-    return (
-      <StyledLoadingWrapper>
-        loading ...
-      </StyledLoadingWrapper>
-    )
-  }
 }
 
 DestinationItems.propTypes = {
+  destinations: PropTypes.object,
 }
 
 export default DestinationItems;

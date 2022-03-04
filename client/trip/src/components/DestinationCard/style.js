@@ -19,7 +19,8 @@ export const StyledCardImage = Styled.div`
   }
   img {
     border-radius: 15px;
-    min-height: 146px;
+    min-height: 200px;
+    max-height: 200px;
   }
 `;
 

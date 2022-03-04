@@ -25,7 +25,6 @@ import { StyledCardWrapper,
 const DestinationCard = (item) => {
 
     const { Text, Title } = Typography;
-    console.log(item.item);
     const { name, id, price, star, city, country } = item.item;
 
     const images = {

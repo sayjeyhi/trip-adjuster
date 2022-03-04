@@ -6,12 +6,14 @@ export const StyledNavbarWrapper = Styled.div`
   padding-bottom: 10px;
   overflow: hidden;
   .swiper-slide {
-    text-align: left;
+    text-align: center;
     margin-right: 10px;
+    &:first-child {
+      text-align: left;
+    }
   }
   a {
     padding-left: 0;
-    margin-right: 10px;
     color: #bebebe;
     &.highlight {
       color: #fa9e51;

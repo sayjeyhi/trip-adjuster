@@ -38,3 +38,7 @@ export const StyledContentWrapper = Styled.div`
     padding: 0 20px;
 `;
 
+export const StyledLoadingWrapper = Styled.div`
+  
+`;
+

@@ -30,6 +30,10 @@ export const StyledIconWrapper = Styled.div`
         background-color: #fa9e51 !important;
         border-color: #fa9e51 !important;
        }
+       &:focus {
+        background-color: #fa9e51 !important;
+        border-color: #fa9e51 !important;
+       }
        g {
            stroke: white;
        }

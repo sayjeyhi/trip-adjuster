@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { context } from '../context/destinationContext';
@@ -10,11 +10,13 @@ import { StyledNavbarWrapper } from './style';
 
 const Navbar = () => {
 
+  const [active, setActive] = useState(0);
   const { destinations, setDestinations, citiesTitle, destCards } = useContext(context);
 
-  const handleDestinationFilter = (city) => {
+  const handleDestinationFilter = (city,id) => {
     const filteredDestinations = destCards.filter(item => item.city === city);
     setDestinations(filteredDestinations);
+    setActive(id);
   }
 
     return (
@@ -22,7 +24,7 @@ const Navbar = () => {
         <Swiper slidesPerView={6.5} className="destination-items" >
           {citiesTitle.map((item,index) => (
             <SwiperSlide id={item}>
-              <NavLink to="/" onClick={() => handleDestinationFilter(item)} >{item}</NavLink>
+              <NavLink to="/" className={`${active === index ? "highlight" : ""}`} onClick={() => handleDestinationFilter(item,index)} >{item}</NavLink>
           </SwiperSlide>
           ))}
         </Swiper>

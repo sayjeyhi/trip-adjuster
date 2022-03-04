@@ -17,10 +17,16 @@ export const StyledCardImage = Styled.div`
   .ant-image-mask {
     border-radius: 15px;
   }
+  .ant-image {
+    width: 100%;
+  }
   img {
     border-radius: 15px;
     min-height: 200px;
     max-height: 200px;
+    max-width: 100%;
+    min-width: 100%;
+
   }
 `;
 

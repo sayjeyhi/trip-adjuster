@@ -7,20 +7,23 @@ import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { useMutation } from "@apollo/client";
 import { getLoginMutation } from '../../queries/index';
 
-import { StyledLoginWrapper, StyledFormWrapper } from './style';
+import { StyledLoginWrapper, StyledFormWrapper, StyledErrorWrapper } from './style';
 
 const Login = () => {
 
-    const { Title } = Typography;
+    const { Title, Text } = Typography;
     const navigate = useNavigate();
     const [loginData, setLoginData] = useState({});
+    const [name, setName] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
     const [ login ] = useMutation(getLoginMutation);
 
     const handleLogin = () => {
       login({ 
         variables: { 
-            username: "mesbah68", 
-            password: "admin",  
+            username: name, 
+            password: password,  
         },
         onCompleted: (data) => {
           setLoginData(data.login);
@@ -30,15 +33,24 @@ const Login = () => {
 
     useEffect(() => {
       if (loginData) {
-        console.log(loginData);
-        const { loggedIn, token } = loginData;
-        console.log(token);
+        const { loggedIn, token, name } = loginData;
         localStorage.setItem('token', token);
+        localStorage.setItem('username', name);
         if (loggedIn) {
           navigate('/');
+        } else {
+          setError("user not found!")
         }
       }
     },[loginData])
+
+    const handleSetName = (e) => {
+      setName(e.target.value);
+    }
+
+    const handleSetPassword = (e) => {
+      setPassword(e.target.value);
+    }
 
 
     return (
@@ -47,11 +59,14 @@ const Login = () => {
           <StyledLoginWrapper>
             <Title level={3}>Login</Title>
             <StyledFormWrapper>
-              <Input placeholder="username" />
-              <Input.Password placeholder="password"
+              <Input placeholder="username" value={name} onChange={handleSetName}  />
+              <Input.Password placeholder="password" value={password} onChange={handleSetPassword}
                 iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
               />
               <Button type="primary" shape="round" onClick={handleLogin} >Login</Button>
+              <StyledErrorWrapper>
+                <Text>{error}</Text>
+              </StyledErrorWrapper>
             </StyledFormWrapper>
           </StyledLoginWrapper>
         </Col>

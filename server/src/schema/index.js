@@ -33,6 +33,7 @@ const NotificationType = new GraphQLObjectType({
     id: { type: GraphQLID },
     title: { type: GraphQLString },
     time: { type: GraphQLString },
+    userId: { type: GraphQLID },
   }),
 });
 

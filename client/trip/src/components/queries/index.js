@@ -33,6 +33,17 @@ export const getDestinationQuery = gql`
 
 `;
 
+export const getNotificationsQuery = gql`
+{
+    notifications{
+        id
+        title
+        time
+        userId
+    }
+}
+`;
+
 export const getLoginMutation = gql`
     mutation Login($username: String!, $password: String! ) {
         login(username: $username, password: $password) {

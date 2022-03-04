@@ -55,3 +55,12 @@ export const StyledFormWrapper = Styled.div`
   }
 `;
 
+export const StyledErrorWrapper = Styled.div`
+  span {
+    color: #d10e0e;
+    display: inline-block;
+    width: 100%;
+    padding-top: 30px;
+  }
+`;
+

@@ -19,6 +19,7 @@ const Header = ({type,title,icon}) => {
 
     const navigate = useNavigate();
     const { Title } = Typography;
+    const username = localStorage.getItem('username');
 
     return (
       <StyledHeaderWrapper className="header">
@@ -27,13 +28,13 @@ const Header = ({type,title,icon}) => {
           <Avatar src={avatar} style={{ width: 40, height: 40 }} />
           <StyledUserName>
             <Title level={5}>Welcome back!</Title>
-            <Title level={4}>Mahsa Mesbah</Title>
+            <Title level={4}>{username}</Title>
           </StyledUserName>
         </>
           :
         <>
           <StyledIconWrapper>
-            <Button type="primary" shape="circle" onClick={() => navigate(-1)} icon={<ArrowIosBackOutlineIcon />} />
+            <Button type="primary" shape="circle" onClick={() => navigate("/")} icon={<ArrowIosBackOutlineIcon />} />
           </StyledIconWrapper>
           <StyledUserName className="flexGrow">
             <Title level={4}>{title}</Title>
@@ -48,7 +49,7 @@ const Header = ({type,title,icon}) => {
           <StyledNotification className={type === 'profile' && 'flexGrow'}>
             <NavLink to="/notifications" >
               <StyledIconWrapper>
-                <Button type="primary" shape="circle" icon={<BellOIcon />} />
+                <Button type="primary" shape="circle" onClick={() => navigate("/notifications")} icon={<BellOIcon />} />
               </StyledIconWrapper>
             </NavLink>
           </StyledNotification>

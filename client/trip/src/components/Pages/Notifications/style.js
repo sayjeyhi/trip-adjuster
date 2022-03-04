@@ -31,3 +31,40 @@ export const StyledDestinationsWrapper = Styled.div`
     }
   }
 `;
+
+export const StyledNotificationsWrapper = Styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 20px;  
+  background-color: #fff;
+  width: 93%;
+  border-radius: 15px;
+  ul {
+    padding: 0 20px;
+    li {
+      font-size: 16px;
+      list-style-type: none;
+      color: #868686;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      span {
+        margin-left: 30px;
+        font-size: 12px;
+        color: #b2b0b0;
+      }
+      h5 {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      svg {
+        fill: #4bcf4d;
+        margin-right: 10px;
+      }
+    }
+  }
+`;

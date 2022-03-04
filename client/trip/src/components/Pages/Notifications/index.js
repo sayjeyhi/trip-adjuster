@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Row, Col, Typography } from 'antd';
 
-import Header from '../Header';
-import Footer from '../Footer';
+import Header from '../../Common/Header';
+import Footer from '../../Common/Footer';
 import { StyledDestinationsWrapper } from './style';
 
 const Notifications = () => {
 
-    const [showMore, setShowMore] = useState(false);
-    const { Text, Title } = Typography;
+    const { Title } = Typography;
 
     return (
     <>

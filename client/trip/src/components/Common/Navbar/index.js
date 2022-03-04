@@ -1,10 +1,9 @@
 import React, { useContext, useState } from 'react';
-import PropTypes from 'prop-types';
-
-import { context } from '../context/destinationContext';
-
 import { NavLink } from "react-router-dom";
+import PropTypes from 'prop-types';
 import { Swiper, SwiperSlide } from "swiper/react";
+
+import { context } from '../../context/destinationContext';
 
 import { StyledNavbarWrapper } from './style';
 

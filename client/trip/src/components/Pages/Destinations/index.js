@@ -4,10 +4,10 @@ import { Row, Col } from 'antd';
 
 import { useQuery } from "@apollo/client";
 
-import Header from '../Header';
-import Footer from '../Footer';
-import DestinationCard from './../DestinationCard';
-import { getDestinationsQuery } from '../queries/index';
+import Header from '../../Common/Header';
+import Footer from '../../Common/Footer';
+import DestinationCard from './partials/DestinationCard';
+import { getDestinationsQuery } from '../../queries/index';
 
 import { StyledDestinationsWrapper, StyledContentWrapper, StyledLoadingWrapper } from './style';
 

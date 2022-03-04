@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { Typography, Row, Col, Input, Button } from 'antd';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 
 import { useMutation } from "@apollo/client";
-import { getLoginMutation } from '../queries/index';
+import { getLoginMutation } from '../../queries/index';
 
 import { StyledLoginWrapper, StyledFormWrapper } from './style';
 
 const Login = () => {
 
     const { Title } = Typography;
+    const navigate = useNavigate();
     const [loginData, setLoginData] = useState({});
     const [ login ] = useMutation(getLoginMutation);
 
@@ -21,10 +23,22 @@ const Login = () => {
             password: "admin",  
         },
         onCompleted: (data) => {
-          setLoginData(data);
+          setLoginData(data.login);
        }
       });
     }
+
+    useEffect(() => {
+      if (loginData) {
+        console.log(loginData);
+        const { loggedIn, token } = loginData;
+        console.log(token);
+        localStorage.setItem('token', token);
+        if (loggedIn) {
+          navigate('/');
+        }
+      }
+    },[loginData])
 
 
     return (

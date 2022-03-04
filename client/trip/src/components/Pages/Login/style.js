@@ -18,19 +18,28 @@ export const StyledFormWrapper = Styled.div`
   input {
     margin-bottom: 10px;
     border-radius: 25px;
-    height: 40px;
+    height: 50px;
   }
-  span {
+  > span {
     margin-bottom: 10px;
     border-radius: 25px;
-    height: 40px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    input {
+      height:40px;
+      margin: 0;
+    }
+    span {
+      margin: 0;
+    }
   }
   button {
     margin-top: 20px;
     background-color: #fa9e51;
     border-color: #fa9e51;
     box-shadow: none;
-    height: 45px;
+    height: 50px;
     &:hover {
       background-color: #fa9e51;
       border-color: #fa9e51;

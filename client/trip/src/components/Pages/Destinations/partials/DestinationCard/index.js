@@ -4,15 +4,15 @@ import PropTypes from 'prop-types';
 import { Image, Typography } from 'antd';
 import { LocationCurvedIcon, StarCurvedIcon } from '@iconbox/iconly'; 
 
-import des1 from '../../assets/images/Destination-1.jpeg';
-import des2 from '../../assets/images/Destination-2.jpeg';
-import des3 from '../../assets/images/Destination-3.jpeg';
-import des4 from '../../assets/images/Destination-4.jpeg';
-import des5 from '../../assets/images/Destination-5.jpeg';
-import des6 from '../../assets/images/Destination-6.jpeg';
-import des7 from '../../assets/images/Destination-7.jpeg';
-import des8 from '../../assets/images/Destination-8.jpeg';
-import des9 from '../../assets/images/Destination-9.jpeg';
+import des1 from '../../../../../assets/images/Destination-2.jpeg';
+import des2 from '../../../../../assets/images/Destination-2.jpeg';
+import des3 from '../../../../../assets/images/Destination-3.jpeg';
+import des4 from '../../../../../assets/images/Destination-4.jpeg';
+import des5 from '../../../../../assets/images/Destination-5.jpeg';
+import des6 from '../../../../../assets/images/Destination-6.jpeg';
+import des7 from '../../../../../assets/images/Destination-7.jpeg';
+import des8 from '../../../../../assets/images/Destination-8.jpeg';
+import des9 from '../../../../../assets/images/Destination-9.jpeg';
 
 import { StyledCardWrapper, 
          StyledCardImage, 
@@ -73,7 +73,7 @@ const DestinationCard = (item) => {
 }
 
 DestinationCard.propTypes = {
-  item: PropTypes.array,
+  item: PropTypes.object,
 }
 
 export default DestinationCard;

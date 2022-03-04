@@ -3,16 +3,16 @@ import { Row, Col } from 'antd';
 
 import DatePicker from 'sassy-datepicker';
 
-import des4 from '../../assets/images/Destination-4.jpeg';
-import des5 from '../../assets/images/Destination-5.jpeg';
-import des6 from '../../assets/images/Destination-6.jpeg';
+import des4 from '../../../assets/images/Destination-4.jpeg';
+import des5 from '../../../assets/images/Destination-5.jpeg';
+import des6 from '../../../assets/images/Destination-6.jpeg';
 
 import { CalendarLightIcon, TicketStarLightIcon } from '@iconbox/iconly'; 
 
-import Header from './../Header';
-import CardHeader from './../CardHeader';
-import RecommendedCard from './../RecommendedCard';
-import Footer from "./../Footer";
+import Header from '../../Common/Header';
+import CardHeader from '../../Common/CardHeader';
+import RecommendedCard from '../Recommended/partials/RecommendedCard';
+import Footer from "../../Common/Footer";
 
 import { StyledScheduleWrapper, StyledDatePickerWrapper } from './style';
 

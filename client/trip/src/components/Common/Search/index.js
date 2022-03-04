@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Button, Input, Form } from 'antd';
 import { SearchLightIcon } from '@iconbox/iconly';
 
-import { context } from '../context/destinationContext';
+import { context } from '../../context/destinationContext';
 
 import { StyledSearchWrapper, StyledIconWrapper } from './style';
 

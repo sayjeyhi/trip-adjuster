@@ -15,14 +15,14 @@ import {
 
 import 'antd/dist/antd.css';
 
-import Home from './components/Home';
-import Details from './components/Details';
-import Schedule from './components/Schedule';
-import Destinations from './components/Destinations';
-import Recommended from './components/Recommended';
-import Discounts from './components/Discounts';
-import Notifications from './components/Notifications';
-import Login from './components/Login';
+import Home from './components/Pages/Home';
+import Details from './components/Pages/Details';
+import Schedule from './components/Pages/Schedule';
+import Destinations from './components/Pages/Destinations';
+import Recommended from './components/Pages/Recommended';
+import Discounts from './components/Pages/Discounts';
+import Notifications from './components/Pages/Notifications';
+import Login from './components/Pages/Login';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql/',

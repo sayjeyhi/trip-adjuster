@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Row, Col, Typography } from 'antd';
 
-import Header from '../Header';
-import Footer from '../Footer';
+import Header from '../../Common/Header';
+import Footer from '../../Common/Footer';
 
 import { StyledDestinationsWrapper, 
         } from './style';

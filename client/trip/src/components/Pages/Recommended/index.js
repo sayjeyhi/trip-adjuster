@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import { Row, Col } from 'antd';
 
 
-import Header from '../Header';
-import Footer from '../Footer'; 
-import RecommendedCard from './../RecommendedCard';
+import Header from '../../Common/Header';
+import Footer from '../../Common/Footer'; 
+import RecommendedCard from './partials/RecommendedCard';
 
-import des1 from '../../assets/images/Destination-1.jpeg';
-import des2 from '../../assets/images/Destination-2.jpeg';
-import des3 from '../../assets/images/Destination-3.jpeg';
-import des4 from '../../assets/images/Destination-4.jpeg';
-import des5 from '../../assets/images/Destination-5.jpeg';
-import des6 from '../../assets/images/Destination-6.jpeg';
-import des7 from '../../assets/images/Destination-7.jpeg';
+import des1 from '../../../assets/images/Destination-1.jpeg';
+import des2 from '../../../assets/images/Destination-2.jpeg';
+import des3 from '../../../assets/images/Destination-3.jpeg';
+import des4 from '../../../assets/images/Destination-4.jpeg';
+import des5 from '../../../assets/images/Destination-5.jpeg';
+import des6 from '../../../assets/images/Destination-6.jpeg';
+import des7 from '../../../assets/images/Destination-7.jpeg';
 
 import { StyledDestinationsWrapper, StyledContentWrapper } from './style';
 

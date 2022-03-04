@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col } from 'antd';
 
-import { DestinationProvider } from '../context/destinationContext';
-
 import { useQuery } from "@apollo/client";
 
-import { getDestinationsQuery } from '../queries/index';
+import { getDestinationsQuery } from '../../queries/index';
+import { DestinationProvider } from '../../context/destinationContext';
 
-import des1 from '../../assets/images/Destination-1.jpeg';
+import des1 from '../../../assets/images/Destination-1.jpeg';
 
-import Header from './../Header';
-import Search from './../Search';
-import Navbar from './../Navbar';
-import CardHeader from './../CardHeader';
-import DestinationItems from './../DestinationItems';
-import RecommendedCard from './../RecommendedCard';
-import Footer from "./../Footer";
+import Header from '../../Common/Header';
+import Search from '../../Common/Search';
+import Navbar from '../../Common/Navbar';
+import CardHeader from '../../Common/CardHeader';
+import DestinationItems from '../Destinations/partials/DestinationItems';
+import RecommendedCard from '../Recommended/partials/RecommendedCard';
+import Footer from "../../Common/Footer";
 
 import { StyledHomeWrapper, StyledLoadingWrapper } from './style';
 

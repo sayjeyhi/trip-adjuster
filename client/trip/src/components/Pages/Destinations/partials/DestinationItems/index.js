@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 
-import { context } from '../context/destinationContext';
+import { context } from '../../../../context/destinationContext';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 

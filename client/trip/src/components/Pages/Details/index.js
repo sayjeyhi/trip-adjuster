@@ -3,24 +3,23 @@ import { useLocation } from 'react-router-dom';
 import { Row, Col, Image, Typography, Button } from 'antd';
 
 import { useQuery } from "@apollo/client";
-
 import { GpsFIcon } from '@iconbox/jamicons';
 import { MoreHorizontalFillIcon } from '@iconbox/eva'; 
 
-import Header from '../Header';
-import RecommendedCard from './../RecommendedCard';
-import { getDestinationQuery } from '../queries/index';
+import Header from '../../Common/Header';
+import RecommendedCard from '../Recommended/partials/RecommendedCard';
+import { getDestinationQuery } from '../../queries';
 
-import des1 from '../../assets/images/Destination-1.jpeg';
-import des2 from '../../assets/images/Destination-2.jpeg';
-import des3 from '../../assets/images/Destination-3.jpeg';
-import des4 from '../../assets/images/Destination-4.jpeg';
-import des5 from '../../assets/images/Destination-5.jpeg';
-import des6 from '../../assets/images/Destination-6.jpeg';
-import des7 from '../../assets/images/Destination-7.jpeg';
-import des8 from '../../assets/images/Destination-8.jpeg';
-import des9 from '../../assets/images/Destination-9.jpeg';
-import loc from '../../assets/images/location.jpeg';
+import des1 from '../../../assets/images/Destination-1.jpeg';
+import des2 from '../../../assets/images/Destination-2.jpeg';
+import des3 from '../../../assets/images/Destination-3.jpeg';
+import des4 from '../../../assets/images/Destination-4.jpeg';
+import des5 from '../../../assets/images/Destination-5.jpeg';
+import des6 from '../../../assets/images/Destination-6.jpeg';
+import des7 from '../../../assets/images/Destination-7.jpeg';
+import des8 from '../../../assets/images/Destination-8.jpeg';
+import des9 from '../../../assets/images/Destination-9.jpeg';
+import loc from '../../../assets/images/location.jpeg';
 
 import { StarCurvedIcon, LocationCurvedIcon } from '@iconbox/iconly'; 
 

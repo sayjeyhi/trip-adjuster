@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Row, Col } from 'antd';
 
 import { useQuery } from "@apollo/client";
@@ -24,6 +25,14 @@ const Home = () => {
   const [destCards, setDestCards] = useState([]);
   const [citiesTitle, setCitiesTitle] = useState([]);
   const { loading, error, data } = useQuery(getDestinationsQuery);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const loginStatus = localStorage.getItem('loggedIn');
+    if (!loginStatus) {
+      navigate('/login');
+    } 
+  },[])
 
   useEffect(() => {
     if (!loading) {

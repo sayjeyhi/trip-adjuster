@@ -13,7 +13,7 @@ const Login = () => {
 
     const { Title, Text } = Typography;
     const navigate = useNavigate();
-    const [loginData, setLoginData] = useState({});
+    const [loginData, setLoginData] = useState('');
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -32,10 +32,11 @@ const Login = () => {
     }
 
     useEffect(() => {
-      if (loginData) {
+      if (!!loginData) {
         const { loggedIn, token, name } = loginData;
         localStorage.setItem('token', token);
         localStorage.setItem('username', name);
+        localStorage.setItem('loggedIn', loggedIn);
         if (loggedIn) {
           navigate('/');
         } else {

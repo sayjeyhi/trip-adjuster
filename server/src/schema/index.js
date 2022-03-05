@@ -41,7 +41,7 @@ const DiscountType = new GraphQLObjectType({
   name: 'discount',
   fields: () => ({
     id: { type: GraphQLID },
-    title: { type: GraphQLString },
+    code: { type: GraphQLString },
     active: { type: GraphQLBoolean },
     discount: { type: GraphQLInt },
     validUntil: { type: GraphQLString },

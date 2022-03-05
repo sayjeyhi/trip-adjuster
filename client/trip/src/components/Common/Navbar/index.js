@@ -20,7 +20,7 @@ const Navbar = () => {
 
     return (
       <StyledNavbarWrapper>
-        <Swiper slidesPerView={6.5} className="destination-items" >
+        <Swiper slidesPerView={5.5} className="destination-items" >
           {citiesTitle.map((item,index) => (
             <SwiperSlide id={item}>
               <NavLink to="/" className={`${active === index ? "highlight" : ""}`} onClick={() => handleDestinationFilter(item,index)} >{item}</NavLink>

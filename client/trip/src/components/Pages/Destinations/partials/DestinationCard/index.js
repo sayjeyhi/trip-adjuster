@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Image, Typography } from 'antd';
 import { LocationCurvedIcon, StarCurvedIcon } from '@iconbox/iconly'; 
 
-import des1 from '../../../../../assets/images/Destination-2.jpeg';
+import des1 from '../../../../../assets/images/Destination-1.jpeg';
 import des2 from '../../../../../assets/images/Destination-2.jpeg';
 import des3 from '../../../../../assets/images/Destination-3.jpeg';
 import des4 from '../../../../../assets/images/Destination-4.jpeg';
@@ -38,7 +38,7 @@ const DestinationCard = (item) => {
       img8: des8, 
       img9: des9, 
     } 
-   
+
     return (
       <StyledCardWrapper className="destination-card" id={id}>
         <StyledCardImage>

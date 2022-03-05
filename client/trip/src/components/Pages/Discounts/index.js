@@ -19,18 +19,16 @@ const Discounts = () => {
     const { Title } = Typography;
     const [discounts, setDiscounts] = useState([]);
     const [fullyLoaded, setFullyLoaded] = useState(false);
+    const [page, setPage] = useState(1);
     const { data, error, fetchMore, variables, loading } = useQuery(getDiscountsQuery, { 
       variables: {
         offset: 0,
         limit: 10
-      }});
-
-    useEffect(() => {
-      if (!loading) {
-        setDiscounts(data.discounts);
+      },
+      onCompleted : (data) => {
+        setDiscounts( data.discounts);
       }
-  
-    },[loading]);
+    });
 
     return (
     <>
@@ -51,9 +49,10 @@ const Discounts = () => {
                 <InView
                   onChange={async (inView) => {
                     if (inView) {
+                      setPage(page + 1);
                       const result = await fetchMore({
                         variables: {
-                          offset: discounts.length
+                          offset: page * 10
                         }
                       });
                       setFullyLoaded(!result.discounts.length);

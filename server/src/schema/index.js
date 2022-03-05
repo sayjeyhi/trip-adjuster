@@ -129,7 +129,7 @@ const RootQuery = new GraphQLObjectType({
         order: { type: GraphQLString },
       },
       resolve(parent, args) {
-        return _.slice(DISCOUNTS, [args.offset], [args.limit])
+        return DISCOUNTS.slice(args.offset,args.offset + args.limit)
       },
     },
     destinations: {

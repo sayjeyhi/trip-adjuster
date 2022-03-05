@@ -15,7 +15,7 @@ import { StyledHeaderWrapper,
          StyledIconWrapper,
         } from './style';
 
-const Header = ({type,title,icon}) => {
+const Header = ({type, title, icon}) => {
 
     const navigate = useNavigate();
     const { Title } = Typography;

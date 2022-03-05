@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { Row, Col, Image, Typography, Button } from 'antd';
+import React, { useState } from 'react';
+import { useLocation, NavLink } from 'react-router-dom';
+import { Row, Col, Image, Typography, Button, Menu, Dropdown } from 'antd';
 
 import { useQuery } from "@apollo/client";
 import { GpsFIcon } from '@iconbox/jamicons';
@@ -62,6 +62,16 @@ const Details = () => {
     const [showMore, setShowMore] = useState(false);
     const { Text, Title } = Typography;
 
+    const menu = (
+        <Menu>
+          <Menu.Item key="1">
+            <NavLink to={"/"}>
+              Report
+            </NavLink>
+          </Menu.Item>
+        </Menu>
+      );
+
     const handleShowMore = (e) => {
         e.preventDefault();
         setShowMore(!showMore);
@@ -80,7 +90,7 @@ const Details = () => {
                             src={images[`img${id}`]}
                         />
                         <StyledHeaderWrapper>
-                            <Header type="details" title="Detail" icon={<MoreHorizontalFillIcon />}  />
+                            <Header type="details" title="Detail" icon={<Dropdown overlay={menu}><MoreHorizontalFillIcon /></Dropdown>} />
                         </StyledHeaderWrapper>
                     </StyledCardImage>
                     <StyledCardWrapper>

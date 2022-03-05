@@ -122,8 +122,14 @@ const RootQuery = new GraphQLObjectType({
     },
     discounts: {
       type: new GraphQLList(DiscountType),
-      resolve() {
-        return DISCOUNTS;
+      args: {
+        limit: { type: GraphQLInt },
+        offset: { type: GraphQLInt },
+        sort: { type: GraphQLString },
+        order: { type: GraphQLString },
+      },
+      resolve(parent, args) {
+        return _.slice(DISCOUNTS, [args.offset], [args.limit])
       },
     },
     destinations: {

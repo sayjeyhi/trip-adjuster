@@ -5,13 +5,8 @@ import {
   Routes,
 } from "react-router-dom";
 
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  useQuery,
-  gql
-} from "@apollo/client";
+import { ApolloProvider } from "@apollo/client";
+import { client } from "../src/components/queries/index";
 
 import 'antd/dist/antd.css';
 
@@ -24,10 +19,6 @@ import Discounts from './components/Pages/Discounts';
 import Notifications from './components/Pages/Notifications';
 import Login from './components/Pages/Login';
 
-const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql/',
-  cache: new InMemoryCache()
-});
 
 function App() {
   return (

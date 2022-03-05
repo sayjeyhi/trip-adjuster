@@ -1,5 +1,42 @@
+import {
+    ApolloClient,
+    InMemoryCache,
+    gql
+  } from "@apollo/client";
 
-import { gql } from "@apollo/client";
+  import {offsetLimitPagination} from '@apollo/client/utilities';  
+
+export const client = new ApolloClient({
+    uri: 'http://localhost:4000/graphql/',
+    cache: new InMemoryCache({
+      typePolicies: {
+        Query: {
+          fields: {
+            discounts: offsetLimitPagination()
+          }
+        }
+      }
+    })
+  });
+
+  export const getDiscountsQuery = gql`
+  query Discounts($offset: Int!, $limit: Int!) {
+    discounts(
+      offset: $offset
+      limit: $limit
+      sort: "launch_date_utc"
+      order: "desc"
+    ) {
+        id
+        code
+        active
+        discount
+        validUntil
+        locationTitle
+    }
+  }
+`;
+
 
 export const getDestinationsQuery = gql`
 {
@@ -40,19 +77,6 @@ export const getNotificationsQuery = gql`
         title
         time
         userId
-    }
-}
-`;
-
-export const getDiscountsQuery = gql`
-{
-    discounts{
-        id
-        code
-        active
-        discount
-        validUntil
-        locationTitle
     }
 }
 `;

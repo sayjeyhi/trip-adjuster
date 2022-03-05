@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { InView } from 'react-intersection-observer';
 import { Row, Col, Typography } from 'antd';
 
 import { useQuery } from "@apollo/client";
@@ -17,7 +18,12 @@ const Discounts = () => {
 
     const { Title } = Typography;
     const [discounts, setDiscounts] = useState([]);
-    const { loading, error, data } = useQuery(getDiscountsQuery);
+    const [fullyLoaded, setFullyLoaded] = useState(false);
+    const { data, error, fetchMore, variables, loading } = useQuery(getDiscountsQuery, { 
+      variables: {
+        offset: 0,
+        limit: 10
+      }});
 
     useEffect(() => {
       if (!loading) {
@@ -40,6 +46,21 @@ const Discounts = () => {
                 <Title level={5} >There is'nt any discount now</Title>
               }
             </StyledDiscountsCard>
+            {discounts.length % variables.limit === 0 &&
+              !fullyLoaded && (
+                <InView
+                  onChange={async (inView) => {
+                    if (inView) {
+                      const result = await fetchMore({
+                        variables: {
+                          offset: discounts.length
+                        }
+                      });
+                      setFullyLoaded(!result.discounts.length);
+                    }
+                  }}
+                />
+              )}
             <Footer />
           </StyledDiscountsWrapper>
         </Col>

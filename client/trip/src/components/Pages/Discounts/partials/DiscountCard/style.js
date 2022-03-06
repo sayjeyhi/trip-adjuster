@@ -7,7 +7,7 @@ export const StyledCardWrapper = Styled.div`
   margin: 0 20px 20px;
   padding: 10px;
   background-color: #fff;
-  border-radius: 15px;
+  border-radius: 5px;
 `;
 
 export const StyledCardImage = Styled.div`

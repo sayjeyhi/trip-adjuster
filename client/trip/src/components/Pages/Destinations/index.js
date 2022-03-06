@@ -18,7 +18,7 @@ const Destinations = () => {
   if (!loading) {
     return (
       <Row className="ant-row ant-row-center">
-        <Col span={10}>
+        <Col xl={8} lg={10} md={15} >
           <StyledDestinationsWrapper>
             <Header type="Destinations" title="Destinations" />
             <StyledContentWrapper>

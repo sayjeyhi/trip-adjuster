@@ -50,7 +50,7 @@ const Home = () => {
     if (!loading) {
     return (
       <Row className="ant-row ant-row-center">
-        <Col span={10}>
+        <Col xl={8} lg={10} md={15} >
           <DestinationProvider value={{destinations, setDestinations, citiesTitle, destCards}}>
             <StyledHomeWrapper>
               <Header type="profile" title="Schedule"  />

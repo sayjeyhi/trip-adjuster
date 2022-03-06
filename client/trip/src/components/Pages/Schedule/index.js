@@ -25,13 +25,16 @@ const Schedule = () => {
     return (
     <>
       <Row className="ant-row ant-row-center">
-        <Col span={10}>
+        <Col xl={8} lg={10} md={15} >
           <StyledScheduleWrapper>
             <Header title="Schedule" type="Schedule" />
             <StyledDatePickerWrapper>
               <DatePicker onChange={onChange} />
             </StyledDatePickerWrapper>
             <CardHeader title="My Schedule" link="/recommended" />
+            <RecommendedCard image={des4} icon={<TicketStarLightIcon />} title="Pantai Nusa Penida" text={[<CalendarLightIcon />, "22 jun 2022"]} />
+            <RecommendedCard image={des5} icon={<TicketStarLightIcon />} title="Pantai Tanah Lot" text={[<CalendarLightIcon />, "22 jun 2022"]} />
+            <RecommendedCard image={des6} icon={<TicketStarLightIcon />} title="Pantai Nusa Dua" text={[<CalendarLightIcon />, "22 jun 2022"]} />
             <RecommendedCard image={des4} icon={<TicketStarLightIcon />} title="Pantai Nusa Penida" text={[<CalendarLightIcon />, "22 jun 2022"]} />
             <RecommendedCard image={des5} icon={<TicketStarLightIcon />} title="Pantai Tanah Lot" text={[<CalendarLightIcon />, "22 jun 2022"]} />
             <RecommendedCard image={des6} icon={<TicketStarLightIcon />} title="Pantai Nusa Dua" text={[<CalendarLightIcon />, "22 jun 2022"]} />

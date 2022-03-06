@@ -82,7 +82,7 @@ const Details = () => {
         return (
             <>
               <Row className="ant-row ant-row-center">
-                <Col span={10}>
+                <Col xl={8} lg={10} md={15} >
                   <StyledDetailsWrapper>
                     <StyledCardImage>
                         <Image
@@ -133,7 +133,9 @@ const Details = () => {
                             </Title>
                         </StyledFooterPriceItem>
                         <StyledButton>
-                            <Button type="primary" shape="round" >Book Now</Button>
+                            <NavLink to="/schedule" >
+                                <Button type="primary" shape="round" >Book Now</Button>
+                            </NavLink>
                         </StyledButton>
                     </StyledFooterWrapper>
                   </StyledDetailsWrapper>

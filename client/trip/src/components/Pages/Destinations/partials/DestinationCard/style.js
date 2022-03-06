@@ -8,6 +8,11 @@ export const StyledCardWrapper = Styled.div`
   background-color: #fff;
   border-radius: 15px;
   width: 100%;
+  &.destination-card {
+    a {
+      width: 100%;
+    }
+  }
 `;
 
 export const StyledCardImage = Styled.div`

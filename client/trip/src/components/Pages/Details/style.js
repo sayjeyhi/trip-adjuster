@@ -2,8 +2,14 @@ import Styled from 'styled-components';
 
 export const StyledDetailsWrapper = Styled.div`
     background-color: #f8f8f8;
-    border-radius: 20px;
+    border-radius: 5px;
     height: 100vh;
+    overflow: auto;
+    scrollbar-width: none; 
+    overflow-y: scroll; 
+    ::-webkit-scrollbar {
+        display: none;
+    }
 `;  
 
 export const StyledCardImage = Styled.div`

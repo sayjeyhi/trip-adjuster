@@ -33,7 +33,7 @@ const Discounts = () => {
     return (
     <>
       <Row className="ant-row ant-row-center">
-        <Col span={10}>
+        <Col xl={8} lg={10} md={15} >
           <StyledDiscountsWrapper>
             <Header type="Discounts" title="Discounts" />
               <StyledDiscountsCard>

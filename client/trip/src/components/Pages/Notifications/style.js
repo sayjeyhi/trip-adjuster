@@ -5,10 +5,10 @@ export const StyledDestinationsWrapper = Styled.div`
   flex-direction: column;
   align-items: center;
   background-color: #f8f8f8;
-  border-radius: 20px;
-  margin-bottom: 20px;
+  border-radius: 5px;
   overflow: auto;
   padding: 0;
+  height: 100vh;
   > h5 {
     padding-top: 20px;
   }

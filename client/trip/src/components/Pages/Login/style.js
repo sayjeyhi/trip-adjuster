@@ -2,7 +2,7 @@ import Styled from 'styled-components';
 
 export const StyledLoginWrapper = Styled.div`
   background-color: #f8f8f8;
-  border-radius: 20px;
+  border-radius: 5px;
   padding: 50px 0 30px;
   height: 100vh;
   .header {

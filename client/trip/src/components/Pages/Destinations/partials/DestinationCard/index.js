@@ -42,7 +42,7 @@ const DestinationCard = (item) => {
     return (
       <StyledCardWrapper className="destination-card" id={id}>
         <StyledCardImage>
-          <NavLink to={`details/?id=${id}`} >
+          <NavLink to={`/details/?id=${id}`} >
             <Image preview={false}
               src={images[`img${id}`]}
             />

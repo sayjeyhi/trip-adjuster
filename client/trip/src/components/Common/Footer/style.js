@@ -7,7 +7,11 @@ export const StyledFooterWrapper = Styled.div`
   background-color: #fff;
   height: 65px;
   margin: 20px 0 0;
-  border-radius: 0 0 20px 20px;
+  border-radius: 0 0 5px 5px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
   a {
     padding: 0;
     width: 25%;

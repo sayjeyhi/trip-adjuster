@@ -5,10 +5,16 @@ export const StyledDestinationsWrapper = Styled.div`
   flex-direction: column;
   align-items: center;
   background-color: #f8f8f8;
-  border-radius: 20px;
-  margin-bottom: 20px;
+  border-radius: 5px;
   overflow: auto;
-  padding: 0;
+  padding: 0 0 80px;
+  overflow: auto;
+  height: 100vh;
+  scrollbar-width: none; 
+  overflow-y: scroll; 
+  ::-webkit-scrollbar {
+      display: none;
+  }
   .header {
     margin: 40px 0 20px 0;
     padding: 0 20px !important;
@@ -22,10 +28,13 @@ export const StyledDestinationsWrapper = Styled.div`
     margin-bottom: 20px;
     width: 100%;
     padding: 10px !important;
-    .ant-image {
-      width: 100% !important;
-      img {
-        height: auto;
+    a { 
+      width: 100%;
+      .ant-image {
+        width: 100% !important;
+        img {
+          height: auto;
+        }
       }
     }
     &:first-child {

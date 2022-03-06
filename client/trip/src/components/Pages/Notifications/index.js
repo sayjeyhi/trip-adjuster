@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Row, Col, Typography } from 'antd';
+import { Row, Col, Typography, Spin } from 'antd';
 
+import { LoadingOutlined } from '@ant-design/icons';
 import { CheckmarkCircle2OutlineIcon } from '@iconbox/eva'; 
 
 import { useQuery } from "@apollo/client";
@@ -10,7 +11,7 @@ import { getNotificationsQuery } from '../../queries/index';
 
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
-import { StyledDestinationsWrapper, StyledNotificationsWrapper } from './style';
+import { StyledDestinationsWrapper, StyledNotificationsWrapper, StyledLoadingWrapper } from './style';
 
 const Notifications = () => {
 
@@ -18,6 +19,8 @@ const Notifications = () => {
     const [notifications, setNotifications] = useState([]);
     const { loading, error, data } = useQuery(getNotificationsQuery);    
     const { Title, Text } = Typography;
+
+    const antIcon = <LoadingOutlined style={{ fontSize: 50 }} spin />;
 
     useEffect(() => {
       const loggedIn = localStorage.getItem('loggedIn');
@@ -33,6 +36,14 @@ const Notifications = () => {
       }
   
     },[loading]);
+
+    if (loading) {
+      return (
+        <StyledLoadingWrapper>
+          <Spin indicator={antIcon} />
+        </StyledLoadingWrapper>
+      )
+    }
 
     return (
     <>

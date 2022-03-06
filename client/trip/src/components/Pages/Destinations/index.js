@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Row, Col } from 'antd';
+import { Row, Col, Spin } from 'antd';
+
+import { LoadingOutlined } from '@ant-design/icons';
 
 import { useQuery } from "@apollo/client";
 
@@ -17,6 +19,8 @@ const Destinations = () => {
   const { loading, error, data } = useQuery(getDestinationsQuery);
   const navigate = useNavigate();
 
+  const antIcon = <LoadingOutlined style={{ fontSize: 50 }} spin />;
+
   useEffect(() => {
     const loggedIn = localStorage.getItem('loggedIn');
     const loginStatus = JSON.parse(loggedIn);
@@ -25,29 +29,29 @@ const Destinations = () => {
     } 
   },[])
 
-  if (!loading) {
+  if (loading) {
     return (
-      <Row className="ant-row ant-row-center">
-        <Col xl={8} lg={10} md={15} >
-          <StyledDestinationsWrapper>
-            <Header type="Destinations" title="Destinations" />
-            <StyledContentWrapper>
-              {data.destinations.map(item => (
-                <DestinationCard item={item} />
-              ))}
-            </StyledContentWrapper>
-            <Footer />
-          </StyledDestinationsWrapper>
-        </Col>
-      </Row>
-    );
-    } else { 
-      return (
       <StyledLoadingWrapper>
-        loading ...
+        <Spin indicator={antIcon} />
       </StyledLoadingWrapper>
     )
-    }
+  }
+
+  return (
+    <Row className="ant-row ant-row-center">
+      <Col xl={8} lg={10} md={15} >
+        <StyledDestinationsWrapper>
+          <Header type="Destinations" title="Destinations" />
+          <StyledContentWrapper>
+            {data.destinations.map(item => (
+              <DestinationCard item={item} />
+            ))}
+          </StyledContentWrapper>
+          <Footer />
+        </StyledDestinationsWrapper>
+      </Col>
+    </Row>
+  );
 }
 
 Destinations.propTypes = {

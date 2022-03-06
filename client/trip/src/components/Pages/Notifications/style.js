@@ -67,3 +67,10 @@ export const StyledNotificationsWrapper = Styled.div`
     }
   }
 `;
+
+export const StyledLoadingWrapper = Styled.div`
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+`;

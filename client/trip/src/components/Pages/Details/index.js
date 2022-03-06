@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, NavLink, useNavigate } from 'react-router-dom';
-import { Row, Col, Image, Typography, Button, Menu, Dropdown } from 'antd';
+import { Row, Col, Image, Typography, Button, Menu, Dropdown, Spin } from 'antd';
+
+import { LoadingOutlined } from '@ant-design/icons';
 
 import { useQuery } from "@apollo/client";
 import { GpsFIcon } from '@iconbox/jamicons';
@@ -63,6 +65,7 @@ const Details = () => {
 
     const [showMore, setShowMore] = useState(false);
     const { Text, Title } = Typography;
+    const antIcon = <LoadingOutlined style={{ fontSize: 50 }} spin />;
 
     const menu = (
         <Menu>
@@ -87,80 +90,80 @@ const Details = () => {
         setShowMore(!showMore);
     }
 
-    if (!loading) {
-        const { name, city, country, description, destination, id, price, star } = data.destination;
-        return (
-            <>
-              <Row className="ant-row ant-row-center">
-                <Col xl={8} lg={10} md={15} >
-                  <StyledDetailsWrapper>
-                    <StyledCardImage>
-                        <Image
-                            preview={false}
-                            width="100%"
-                            src={images[`img${id}`]}
-                        />
-                        <StyledHeaderWrapper>
-                            <Header type="details" title="Detail" icon={<Dropdown overlay={menu}><MoreHorizontalFillIcon /></Dropdown>} />
-                        </StyledHeaderWrapper>
-                    </StyledCardImage>
-                    <StyledCardWrapper>
-                        <StyledCardDetails>
-                            <StyledCardTitle>
-                                <Title level={5}>{name}</Title>
-                                <Text>
-                                    <LocationCurvedIcon />
-                                    {country}, {city}
-                                </Text>
-                            </StyledCardTitle>
-                            <StyledPriceItem>
-                                <Text>
-                                    Overview
-                                </Text>
-                                <Text>
-                                    <StarCurvedIcon /> {star}
-                                </Text>
-                            </StyledPriceItem>
-                        </StyledCardDetails>
-                    </StyledCardWrapper>
-                    <StyledContentWrapper>
-                        <Title level={5}>Description</Title>
-                        <Text className={`${showMore ? "full-text" : ""}`}>
-                            {description}
-                        </Text>
-                        <a onClick={handleShowMore} className="more">{!showMore && 'Read More...'} </a>
-                    </StyledContentWrapper>
-                    
-                    <RecommendedCard image={loc} title={`${destination} km`} icon={<GpsFIcon size={2} />} />
-                    <StyledFooterWrapper>
-                        <StyledFooterPriceItem>
-                            <Text>
-                                Total Price
-                            </Text>
-                            <Title level={5}>
-                                <Text>$</Text>
-                                 {price} 
-                                <Text>Per day</Text>
-                            </Title>
-                        </StyledFooterPriceItem>
-                        <StyledButton>
-                            <NavLink to="/schedule" >
-                                <Button type="primary" shape="round" >Book Now</Button>
-                            </NavLink>
-                        </StyledButton>
-                    </StyledFooterWrapper>
-                  </StyledDetailsWrapper>
-                </Col>
-              </Row>
-            </>
-        );
-    } else {
-        return (
-          <StyledLoadingWrapper>
-            loading ...
-          </StyledLoadingWrapper>
-        )
-      }
+    if (loading) {
+      return (
+        <StyledLoadingWrapper>
+          <Spin indicator={antIcon} />
+        </StyledLoadingWrapper>
+      )
+    } else {  
+      const { name, city, country, description, destination, id, price, star } = data.destination;
+      return (
+          <>
+            <Row className="ant-row ant-row-center">
+              <Col xl={8} lg={10} md={15} >
+                <StyledDetailsWrapper>
+                  <StyledCardImage>
+                      <Image
+                          preview={false}
+                          width="100%"
+                          src={images[`img${id}`]}
+                      />
+                      <StyledHeaderWrapper>
+                          <Header type="details" title="Detail" icon={<Dropdown overlay={menu}><MoreHorizontalFillIcon /></Dropdown>} />
+                      </StyledHeaderWrapper>
+                  </StyledCardImage>
+                  <StyledCardWrapper>
+                      <StyledCardDetails>
+                          <StyledCardTitle>
+                              <Title level={5}>{name}</Title>
+                              <Text>
+                                  <LocationCurvedIcon />
+                                  {country}, {city}
+                              </Text>
+                          </StyledCardTitle>
+                          <StyledPriceItem>
+                              <Text>
+                                  Overview
+                              </Text>
+                              <Text>
+                                  <StarCurvedIcon /> {star}
+                              </Text>
+                          </StyledPriceItem>
+                      </StyledCardDetails>
+                  </StyledCardWrapper>
+                  <StyledContentWrapper>
+                      <Title level={5}>Description</Title>
+                      <Text className={`${showMore ? "full-text" : ""}`}>
+                          {description}
+                      </Text>
+                      <a onClick={handleShowMore} className="more">{!showMore && 'Read More...'} </a>
+                  </StyledContentWrapper>
+                  
+                  <RecommendedCard image={loc} title={`${destination} km`} icon={<GpsFIcon size={2} />} />
+                  <StyledFooterWrapper>
+                      <StyledFooterPriceItem>
+                          <Text>
+                              Total Price
+                          </Text>
+                          <Title level={5}>
+                              <Text>$</Text>
+                                {price} 
+                              <Text>Per day</Text>
+                          </Title>
+                      </StyledFooterPriceItem>
+                      <StyledButton>
+                          <NavLink to="/schedule" >
+                              <Button type="primary" shape="round" >Book Now</Button>
+                          </NavLink>
+                      </StyledButton>
+                  </StyledFooterWrapper>
+                </StyledDetailsWrapper>
+              </Col>
+            </Row>
+          </>
+      );
+    }
 }
 
 export default Details;

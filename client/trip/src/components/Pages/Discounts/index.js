@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { InView } from 'react-intersection-observer';
-import { Row, Col, Typography } from 'antd';
+import { Row, Col, Typography, Spin } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
 
 import { useQuery } from "@apollo/client";
 
@@ -13,7 +14,7 @@ import { getDiscountsQuery } from '../../queries/index';
 
 import des9 from '../../../assets/images/Destination-9.jpeg';
 
-import { StyledDiscountsWrapper, StyledDiscountsCard } from './style';
+import { StyledDiscountsWrapper, StyledDiscountsCard, StyledLoadingWrapper } from './style';
 
 const Discounts = () => {
 
@@ -32,6 +33,8 @@ const Discounts = () => {
       }
     });
 
+    const antIcon = <LoadingOutlined style={{ fontSize: 50 }} spin />;
+
     useEffect(() => {
       const loggedIn = localStorage.getItem('loggedIn');
       const loginStatus = JSON.parse(loggedIn);
@@ -39,6 +42,14 @@ const Discounts = () => {
         navigate('/login');
       } 
     },[]) 
+
+    if (loading) {
+      return (
+        <StyledLoadingWrapper>
+          <Spin indicator={antIcon} />
+        </StyledLoadingWrapper>
+      )
+    }
 
     return (
     <>

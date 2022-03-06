@@ -38,3 +38,10 @@ export const StyledDiscountsCard = Styled.div`
   width: 93%;
   margin: 0 20px;
 `;
+
+export const StyledLoadingWrapper = Styled.div`
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+`;

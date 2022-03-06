@@ -12,6 +12,7 @@ export const StyledFooterWrapper = Styled.div`
   bottom: 0;
   width: 100%;
   left: 0;
+  z-index: 99;
   a {
     padding: 0;
     width: 25%;

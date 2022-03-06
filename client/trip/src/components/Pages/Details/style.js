@@ -4,6 +4,7 @@ export const StyledDetailsWrapper = Styled.div`
     background-color: #f8f8f8;
     border-radius: 5px;
     height: 100vh;
+    padding-bottom: 70px;
     overflow: auto;
     scrollbar-width: none; 
     overflow-y: scroll; 

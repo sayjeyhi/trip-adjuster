@@ -86,6 +86,7 @@ const Details = () => {
                   <StyledDetailsWrapper>
                     <StyledCardImage>
                         <Image
+                            preview={false}
                             width="100%"
                             src={images[`img${id}`]}
                         />

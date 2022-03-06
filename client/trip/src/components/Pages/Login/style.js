@@ -23,15 +23,18 @@ export const StyledFormWrapper = Styled.div`
   > span {
     margin-bottom: 10px;
     border-radius: 25px;
+    padding: 0;
     height: 50px;
     display: flex;
     align-items: center;
     input {
-      height:40px;
+      height: 48px;
       margin: 0;
+      padding: 4px 11px !important;
     }
-    span {
-      margin: 0;
+    .ant-input-suffix {
+      position: absolute;
+      right: 15px;
     }
   }
   button {
@@ -56,11 +59,7 @@ export const StyledFormWrapper = Styled.div`
 `;
 
 export const StyledErrorWrapper = Styled.div`
-  span {
-    color: #d10e0e;
-    display: inline-block;
-    width: 100%;
-    padding-top: 30px;
-  }
+  padding-top: 30px;
+  text-align: left;
 `;
 

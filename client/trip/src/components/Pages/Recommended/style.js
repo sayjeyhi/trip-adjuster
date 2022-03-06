@@ -7,7 +7,7 @@ export const StyledRecommendedWrapper = Styled.div`
   background-color: #f8f8f8;
   border-radius: 5px;
   overflow: auto;
-  padding: 0;
+  padding-bottom: 70px;
   height: 100vh;
   scrollbar-width: none; 
   overflow-y: scroll; 

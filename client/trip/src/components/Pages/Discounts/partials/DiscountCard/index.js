@@ -18,9 +18,7 @@ const DiscountCard = ({image, title, discount, text, percent}) => {
     return (
       <StyledCardWrapper className="discount-card">
         <StyledCardImage>
-          <Image
-            src={image}
-          />
+          <Image preview={false} src={image} />
         </StyledCardImage>
         <StyledCardDetails className={!discount && 'align'}>
           <StyledCardTitle>

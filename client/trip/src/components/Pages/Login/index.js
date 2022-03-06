@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Typography, Row, Col, Input, Button } from 'antd';
+import { Typography, Row, Col, Input, Button, Alert, Avatar } from 'antd';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
+
+import avatar from '../../../assets/images/avatar.jpeg';
 
 import { useMutation } from "@apollo/client";
 import { getLoginMutation } from '../../queries/index';
@@ -58,6 +60,7 @@ const Login = () => {
       <Row className="ant-row ant-row-center">
         <Col xl={8} lg={10} md={15} >
           <StyledLoginWrapper>
+          <Avatar src={avatar} style={{ width: 80, height: 80 }} />
             <Title level={3}>Login</Title>
             <StyledFormWrapper>
               <Input placeholder="username" value={name} onChange={handleSetName}  />
@@ -66,7 +69,13 @@ const Login = () => {
               />
               <Button type="primary" shape="round" onClick={handleLogin} >Login</Button>
               <StyledErrorWrapper>
-                <Text>{error}</Text>
+                {error &&
+                  <Alert
+                    message="Error"
+                    description={error}
+                    type="error"
+                  />
+                }
               </StyledErrorWrapper>
             </StyledFormWrapper>
           </StyledLoginWrapper>

@@ -4,27 +4,27 @@ export const StyledNavbarWrapper = Styled.div`
   display: flex;
   margin: 20px 0 10px 20px;
   padding-bottom: 10px;
-  overflow: hidden;
-  .swiper {
-    height: 100%;
-  }
-  .swiper-slide {
-    text-align: left;
-    margin-right: 10px;
-    height: 100%;
+  overflow-x: scroll;
+  white-space: nowrap;
+  scrollbar-width: none; 
+  ::-webkit-scrollbar {
+      display: none;
   }
   a {
     padding-left: 0;
+    font-size: 14px;
     color: #bebebe;
+    margin-right: 30px;
+    position: relative;
     &.highlight {
       color: #fa9e51;
       &::after {
         content:'';
         position: absolute;
         background-color: #fa9e51;
-        width: 30%;
+        width: 50%;
         height: 2px;
-        bottom: 0px;
+        bottom: -4px;
         left: 0;
       }
     }

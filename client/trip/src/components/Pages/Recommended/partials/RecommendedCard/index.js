@@ -18,9 +18,7 @@ const RecommendedCard = ({image, title, icon, text}) => {
     return (
       <StyledCardWrapper className="recommended-card">
         <StyledCardImage>
-          <Image
-            src={image}
-          />
+          <Image preview={false} src={image} />
         </StyledCardImage>
         <StyledCardDetails className={!icon && 'align'}>
           <StyledCardTitle>

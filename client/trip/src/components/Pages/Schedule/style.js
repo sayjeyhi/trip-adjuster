@@ -26,3 +26,17 @@ export const StyledDatePickerWrapper = Styled.div`
         }
     }
 `;
+
+export const StyledRecommentCardWrapper = Styled.div`
+    
+`;
+
+export const StyledIconWrapper = Styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 42px;
+    border-radius: 10px;
+    background-color: #fef1e6;
+`;

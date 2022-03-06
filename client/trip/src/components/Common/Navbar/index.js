@@ -20,13 +20,10 @@ const Navbar = () => {
 
     return (
       <StyledNavbarWrapper>
-        <Swiper slidesPerView={5.5} className="destination-items" >
-          {citiesTitle.map((item,index) => (
-            <SwiperSlide id={item}>
+        {citiesTitle.map((item,index) => (
               <NavLink to="/" className={`${active === index ? "highlight" : ""}`} onClick={() => handleDestinationFilter(item,index)} >{item}</NavLink>
-          </SwiperSlide>
+        
           ))}
-        </Swiper>
       </StyledNavbarWrapper>
     );
 }

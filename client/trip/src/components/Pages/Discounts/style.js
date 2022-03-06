@@ -7,7 +7,7 @@ export const StyledDiscountsWrapper = Styled.div`
   background-color: #f8f8f8;
   border-radius: 5px;
   overflow: auto;
-  padding: 0 0 70px;
+  padding: 70px 0 70px;
   height: 100vh;
   scrollbar-width: none; 
   overflow-y: scroll; 
@@ -15,7 +15,6 @@ export const StyledDiscountsWrapper = Styled.div`
       display: none;
   }
   .header {
-    margin: 40px 0 20px 0;
     padding: 0 20px !important;
     width: 100%;
   }

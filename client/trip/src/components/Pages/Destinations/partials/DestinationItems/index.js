@@ -19,8 +19,8 @@ const DestinationItems = () => {
     return (
       <StyledDestinationItemsWrapper>
         <Swiper slidesPerView={1.5} className="destination-items" >
-          {destinations.map(item => (
-            <SwiperSlide>
+          {destinations.map((item,index) => (
+            <SwiperSlide key={index} >
               <DestinationCard item={item} />
             </SwiperSlide>
           ))}

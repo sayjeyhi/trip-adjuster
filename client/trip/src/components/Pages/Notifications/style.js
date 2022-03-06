@@ -7,7 +7,7 @@ export const StyledDestinationsWrapper = Styled.div`
   background-color: #f8f8f8;
   border-radius: 5px;
   overflow: auto;
-  padding: 0;
+  padding: 80px 0 0;
   height: 100vh;
   > h5 {
     padding-top: 20px;
@@ -16,7 +16,6 @@ export const StyledDestinationsWrapper = Styled.div`
     width: 100%;
   }
   .header {
-    margin: 40px 0 20px 0;
     padding: 0 20px !important;
     width: 100%;
     .ant-image {

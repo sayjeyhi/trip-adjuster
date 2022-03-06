@@ -50,7 +50,7 @@ DiscountCard.propTypes = {
   image: PropTypes.string,
   title: PropTypes.string,
   discount: PropTypes.string,
-  percent: PropTypes.string,
+  percent: PropTypes.number,
   text: PropTypes.node,
 }
 

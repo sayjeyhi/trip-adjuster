@@ -7,7 +7,7 @@ export const StyledDestinationsWrapper = Styled.div`
   background-color: #f8f8f8;
   border-radius: 5px;
   overflow: auto;
-  padding: 0 0 80px;
+  padding: 85px 0 80px;
   overflow: auto;
   height: 100vh;
   scrollbar-width: none; 
@@ -16,7 +16,6 @@ export const StyledDestinationsWrapper = Styled.div`
       display: none;
   }
   .header {
-    margin: 40px 0 20px 0;
     padding: 0 20px !important;
     width: 100%;
   }

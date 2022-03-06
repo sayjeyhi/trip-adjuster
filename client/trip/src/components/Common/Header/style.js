@@ -3,7 +3,16 @@ import Styled from 'styled-components';
 export const StyledHeaderWrapper = Styled.div`
     display: flex;
     align-items:center;
-    padding: 0 20px;
+    padding: 15px 20px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #f8f8f8;
+    z-index: 99;
+    height: 80px;
+    display: flex;
+    align-items: center;
 `;
 
 export const StyledUserName = Styled.div`

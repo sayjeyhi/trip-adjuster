@@ -8,6 +8,7 @@ export const StyledRecommendedWrapper = Styled.div`
   border-radius: 5px;
   overflow: auto;
   padding-bottom: 70px;
+  padding-top: 80px;
   height: 100vh;
   scrollbar-width: none; 
   overflow-y: scroll; 
@@ -15,7 +16,6 @@ export const StyledRecommendedWrapper = Styled.div`
       display: none;
   }
   .header {
-    margin: 40px 0 20px 0;
     padding: 0 20px !important;
     width: 100%;
   }

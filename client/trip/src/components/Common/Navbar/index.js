@@ -21,7 +21,7 @@ const Navbar = () => {
     return (
       <StyledNavbarWrapper>
         {citiesTitle.map((item,index) => (
-              <NavLink to="/" className={`${active === index ? "highlight" : ""}`} onClick={() => handleDestinationFilter(item,index)} >{item}</NavLink>
+              <NavLink key={index} to="/" className={`${active === index ? "highlight" : ""}`} onClick={() => handleDestinationFilter(item,index)} >{item}</NavLink>
         
           ))}
       </StyledNavbarWrapper>

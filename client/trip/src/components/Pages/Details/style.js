@@ -11,6 +11,12 @@ export const StyledDetailsWrapper = Styled.div`
     ::-webkit-scrollbar {
         display: none;
     }
+    .header {
+      position: relative;
+      height: auto;
+      background-color: transparent;
+      padding-top: 0;
+    }
 `;  
 
 export const StyledCardImage = Styled.div`

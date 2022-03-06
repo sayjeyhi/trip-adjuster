@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useLocation, NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useLocation, NavLink, useNavigate } from 'react-router-dom';
 import { Row, Col, Image, Typography, Button, Menu, Dropdown } from 'antd';
 
 import { useQuery } from "@apollo/client";
@@ -39,6 +39,8 @@ import { StyledDetailsWrapper,
 
 const Details = () => {
 
+
+    const navigate = useNavigate();
     const location = useLocation();
     const destinationId = location.search;
     const id = destinationId.split('=')[1];
@@ -71,6 +73,14 @@ const Details = () => {
           </Menu.Item>
         </Menu>
       );
+
+      useEffect(() => {
+        const loggedIn = localStorage.getItem('loggedIn');
+        const loginStatus = JSON.parse(loggedIn);
+        if (!loginStatus) {
+          navigate('/login');
+        } 
+      },[])
 
     const handleShowMore = (e) => {
         e.preventDefault();

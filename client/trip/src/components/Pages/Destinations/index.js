@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'antd';
 
@@ -14,6 +15,15 @@ import { StyledDestinationsWrapper, StyledContentWrapper, StyledLoadingWrapper }
 const Destinations = () => {
     
   const { loading, error, data } = useQuery(getDestinationsQuery);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const loggedIn = localStorage.getItem('loggedIn');
+    const loginStatus = JSON.parse(loggedIn);
+    if (!loginStatus) {
+      navigate('/login');
+    } 
+  },[])
 
   if (!loading) {
     return (

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Row, Col, Typography } from 'antd';
 
 import { CheckmarkCircle2OutlineIcon } from '@iconbox/eva'; 
@@ -13,9 +14,18 @@ import { StyledDestinationsWrapper, StyledNotificationsWrapper } from './style';
 
 const Notifications = () => {
 
+    const navigate = useNavigate();
     const [notifications, setNotifications] = useState([]);
     const { loading, error, data } = useQuery(getNotificationsQuery);    
     const { Title, Text } = Typography;
+
+    useEffect(() => {
+      const loggedIn = localStorage.getItem('loggedIn');
+      const loginStatus = JSON.parse(loggedIn);
+      if (!loginStatus) {
+        navigate('/login');
+      } 
+    },[])
 
     useEffect(() => {
       if (!loading) {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { InView } from 'react-intersection-observer';
 import { Row, Col, Typography } from 'antd';
 
@@ -20,6 +21,7 @@ const Discounts = () => {
     const [discounts, setDiscounts] = useState([]);
     const [fullyLoaded, setFullyLoaded] = useState(false);
     const [page, setPage] = useState(1);
+    const navigate = useNavigate();
     const { data, error, fetchMore, variables, loading } = useQuery(getDiscountsQuery, { 
       variables: {
         offset: 0,
@@ -29,6 +31,14 @@ const Discounts = () => {
         setDiscounts( data.discounts);
       }
     });
+
+    useEffect(() => {
+      const loggedIn = localStorage.getItem('loggedIn');
+      const loginStatus = JSON.parse(loggedIn);
+      if (!loginStatus) {
+        navigate('/login');
+      } 
+    },[]) 
 
     return (
     <>

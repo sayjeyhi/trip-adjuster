@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Row, Col } from 'antd';
 
 import DatePicker from 'sassy-datepicker';
@@ -18,6 +19,16 @@ import Footer from "../../Common/Footer";
 import { StyledScheduleWrapper, StyledDatePickerWrapper, StyledRecommentCardWrapper, StyledIconWrapper } from './style';
 
 const Schedule = () => {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const loggedIn = localStorage.getItem('loggedIn');
+    const loginStatus = JSON.parse(loggedIn);
+    if (!loginStatus) {
+      navigate('/login');
+    } 
+  },[])
 
   const onChange = (date) => {
     console.log(date.toString());

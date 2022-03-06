@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Row, Col } from 'antd';
 
 
@@ -17,6 +18,16 @@ import des7 from '../../../assets/images/Destination-7.jpeg';
 import { StyledRecommendedWrapper, StyledContentWrapper } from './style';
 
 const Recommended = () => {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const loggedIn = localStorage.getItem('loggedIn');
+    const loginStatus = JSON.parse(loggedIn);
+    if (!loginStatus) {
+      navigate('/login');
+    } 
+  },[])  
 
     return (
     <>

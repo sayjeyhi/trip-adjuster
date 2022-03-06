@@ -18,6 +18,7 @@ import RecommendedCard from '../Recommended/partials/RecommendedCard';
 import Footer from "../../Common/Footer";
 
 import { StyledHomeWrapper, StyledLoadingWrapper } from './style';
+import { LogInFillIcon } from '@iconbox/eva';
 
 const Home = () => {
 
@@ -28,7 +29,8 @@ const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const loginStatus = localStorage.getItem('loggedIn');
+    const loggedIn = localStorage.getItem('loggedIn');
+    const loginStatus = JSON.parse(loggedIn);
     if (!loginStatus) {
       navigate('/login');
     } 

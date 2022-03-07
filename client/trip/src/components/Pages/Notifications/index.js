@@ -11,7 +11,7 @@ import { getNotificationsQuery } from '../../queries/index';
 
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
-import { StyledDestinationsWrapper, StyledNotificationsWrapper, StyledLoadingWrapper } from './style';
+import { StyledDestinationsWrapper, StyledNotificationsWrapper, StyledNotificationsContent, StyledLoadingWrapper } from './style';
 
 const Notifications = () => {
 
@@ -49,9 +49,9 @@ const Notifications = () => {
     <>
       <Row className="ant-row ant-row-center">
         <Col xl={8} lg={10} md={15} >
-          <StyledDestinationsWrapper>
+          <StyledNotificationsWrapper>
             <Header type="Notifications" title="Notifications" link="/" />
-            <StyledNotificationsWrapper>
+            <StyledNotificationsContent>
               {notifications ? notifications.map((item,index) => (
                 <ul key={index}>
                   <li>
@@ -65,9 +65,9 @@ const Notifications = () => {
               : 
               <Title level={5} >There is'nt any Notification now</Title>
               }
-            </StyledNotificationsWrapper>
+            </StyledNotificationsContent>
             <Footer />
-          </StyledDestinationsWrapper>
+          </StyledNotificationsWrapper>
         </Col>
       </Row>
     </>

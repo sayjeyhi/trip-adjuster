@@ -1,6 +1,6 @@
 import Styled from 'styled-components';
 
-export const StyledDestinationsWrapper = Styled.div`
+export const StyledNotificationsWrapper = Styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,6 +9,11 @@ export const StyledDestinationsWrapper = Styled.div`
   overflow: auto;
   padding: 80px 0 0;
   height: 100vh;
+  scrollbar-width: none; 
+  overflow-y: scroll; 
+  ::-webkit-scrollbar {
+      display: none;
+  }
   > h5 {
     padding-top: 20px;
   }
@@ -31,7 +36,7 @@ export const StyledDestinationsWrapper = Styled.div`
   }
 `;
 
-export const StyledNotificationsWrapper = Styled.div`
+export const StyledNotificationsContent = Styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;

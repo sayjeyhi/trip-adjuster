@@ -18,6 +18,7 @@ import Recommended from './components/Pages/Recommended';
 import Discounts from './components/Pages/Discounts';
 import Notifications from './components/Pages/Notifications';
 import Login from './components/Pages/Login';
+import Profile from './components/Pages/Profile';
 
 
 function App() {
@@ -27,13 +28,14 @@ function App() {
       <div className="App font-face-gb">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/details" element={<Details />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/destinations" element={<Destinations />} />
           <Route path="/recommended" element={<Recommended />} />
           <Route path="/discounts" element={<Discounts />} />
           <Route path="/notifications" element={<Notifications />} />
-          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </Router>

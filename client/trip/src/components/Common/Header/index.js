@@ -25,7 +25,9 @@ const Header = ({type, title, icon}) => {
       <StyledHeaderWrapper className="header">
         {type === 'profile' ?
         <>
-          <Avatar src={avatar} style={{ width: 40, height: 40 }} />
+          <NavLink to="/profile">
+            <Avatar src={avatar} style={{ width: 40, height: 40 }} />
+          </NavLink>
           <StyledUserName>
             <Title level={5}>Welcome back!</Title>
             <Title level={4}>{username}</Title>

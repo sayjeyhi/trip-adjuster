@@ -1,14 +1,13 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 
-import { context } from '../../../../context/destinationContext';
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
 import DestinationCard from '../DestinationCard';
+import { context } from '../../../../context/destinationContext';
 
 import { StyledDestinationItemsWrapper } from './style';
 

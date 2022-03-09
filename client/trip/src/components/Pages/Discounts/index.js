@@ -2,16 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { InView } from 'react-intersection-observer';
 import { Row, Col, Typography, Spin } from 'antd';
-import { LoadingOutlined } from '@ant-design/icons';
 
+import { LoadingOutlined } from '@ant-design/icons';
 import { useQuery } from "@apollo/client";
 
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
 import DiscountCard from './partials/DiscountCard';
-
 import { getDiscountsQuery } from '../../queries/index';
-
 import des9 from '../../../assets/images/Destination-9.jpeg';
 
 import { StyledDiscountsWrapper, StyledDiscountsCard, StyledLoadingWrapper } from './style';

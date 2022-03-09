@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Row, Col } from 'antd';
 
-
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer'; 
 import RecommendedCard from './partials/RecommendedCard';

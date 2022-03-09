@@ -3,10 +3,10 @@ import { useLocation, NavLink, useNavigate } from 'react-router-dom';
 import { Row, Col, Image, Typography, Button, Menu, Dropdown, Spin } from 'antd';
 
 import { LoadingOutlined } from '@ant-design/icons';
-
 import { useQuery } from "@apollo/client";
 import { GpsFIcon } from '@iconbox/jamicons';
 import { MoreHorizontalFillIcon } from '@iconbox/eva'; 
+import { StarCurvedIcon, LocationCurvedIcon } from '@iconbox/iconly'; 
 
 import Header from '../../Common/Header';
 import RecommendedCard from '../Recommended/partials/RecommendedCard';
@@ -23,8 +23,6 @@ import des8 from '../../../assets/images/Destination-8.jpeg';
 import des9 from '../../../assets/images/Destination-9.jpeg';
 import loc from '../../../assets/images/location.jpeg';
 
-import { StarCurvedIcon, LocationCurvedIcon } from '@iconbox/iconly'; 
-
 import { StyledDetailsWrapper, 
             StyledCardImage, 
             StyledCardWrapper,
@@ -40,7 +38,6 @@ import { StyledDetailsWrapper,
         } from './style';
 
 const Details = () => {
-
 
     const navigate = useNavigate();
     const location = useLocation();

@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Button, Input, Form } from 'antd';
+
 import { SearchLightIcon } from '@iconbox/iconly';
 
 import { context } from '../../context/destinationContext';
@@ -9,7 +10,7 @@ import { StyledSearchWrapper, StyledIconWrapper } from './style';
 const Search = () => {
 
   const [search, setSearch] = useState("");
-  const { destinations, setDestinations, citiesTitle, destCards } = useContext(context);
+  const { setDestinations, destCards } = useContext(context);
 
   const handleSetSearch = (e) => {
     setSearch(e.target.value);

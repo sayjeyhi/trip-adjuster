@@ -4,14 +4,13 @@ import { Row, Col, Typography, Spin } from 'antd';
 
 import { LoadingOutlined } from '@ant-design/icons';
 import { CheckmarkCircle2OutlineIcon } from '@iconbox/eva'; 
-
 import { useQuery } from "@apollo/client";
 
 import { getNotificationsQuery } from '../../queries/index';
-
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
-import { StyledDestinationsWrapper, StyledNotificationsWrapper, StyledNotificationsContent, StyledLoadingWrapper } from './style';
+
+import { StyledNotificationsWrapper, StyledNotificationsContent, StyledLoadingWrapper } from './style';
 
 const Notifications = () => {
 

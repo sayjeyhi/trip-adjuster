@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import PropTypes from 'prop-types';
+
 import { Row, Col, Spin } from 'antd';
 
 import { LoadingOutlined } from '@ant-design/icons';
-
 import { useQuery } from "@apollo/client";
 
 import Header from '../../Common/Header';
@@ -52,9 +51,6 @@ const Destinations = () => {
       </Col>
     </Row>
   );
-}
-
-Destinations.propTypes = {
 }
 
 export default Destinations;

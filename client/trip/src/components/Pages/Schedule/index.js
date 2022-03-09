@@ -1,12 +1,8 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import { Row, Col } from 'antd';
-
 import DatePicker from 'sassy-datepicker';
-
-import des4 from '../../../assets/images/Destination-4.jpeg';
-import des5 from '../../../assets/images/Destination-5.jpeg';
-import des6 from '../../../assets/images/Destination-6.jpeg';
 
 import { CalendarLightIcon } from '@iconbox/iconly'; 
 import { TicketIcon } from '@iconbox/jamicons'; 
@@ -15,6 +11,10 @@ import Header from '../../Common/Header';
 import CardHeader from '../../Common/CardHeader';
 import RecommendedCard from '../Recommended/partials/RecommendedCard';
 import Footer from "../../Common/Footer";
+
+import des4 from '../../../assets/images/Destination-4.jpeg';
+import des5 from '../../../assets/images/Destination-5.jpeg';
+import des6 from '../../../assets/images/Destination-6.jpeg';
 
 import { StyledScheduleWrapper, StyledDatePickerWrapper, StyledRecommentCardWrapper, StyledIconWrapper } from './style';
 

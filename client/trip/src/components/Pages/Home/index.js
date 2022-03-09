@@ -6,19 +6,16 @@ import { useQuery } from "@apollo/client";
 
 import { getDestinationsQuery } from '../../queries/index';
 import { DestinationProvider } from '../../context/destinationContext';
-
-import des1 from '../../../assets/images/Destination-1.jpeg';
-
 import Header from '../../Common/Header';
 import Search from '../../Common/Search';
 import Navbar from '../../Common/Navbar';
+import des1 from '../../../assets/images/Destination-1.jpeg';
 import CardHeader from '../../Common/CardHeader';
 import DestinationItems from '../Destinations/partials/DestinationItems';
 import RecommendedCard from '../Recommended/partials/RecommendedCard';
 import Footer from "../../Common/Footer";
 
 import { StyledHomeWrapper, StyledLoadingWrapper } from './style';
-import { LogInFillIcon } from '@iconbox/eva';
 
 const Home = () => {
 

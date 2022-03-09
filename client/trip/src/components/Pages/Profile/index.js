@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Typography, Row, Col, Input, Button, Alert, Avatar } from 'antd';
+import { Typography, Row, Col, Button, Avatar } from 'antd';
+
 import { LogoutLightIcon } from '@iconbox/iconly'; 
 
 import Header from '../../Common/Header';
 import Footer from '../../Common/Footer';
-
 import avatar from '../../../assets/images/avatar.jpeg';
 
 import { StyledProfileWrapper } from './style';
@@ -16,7 +16,7 @@ const Profile = () => {
     const navigate = useNavigate();
     const username = localStorage.getItem('username');
 
-    const { Title, Text } = Typography;
+    const { Title } = Typography;
 
     useEffect(() => {
       const loggedIn = localStorage.getItem('loggedIn');

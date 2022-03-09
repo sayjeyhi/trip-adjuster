@@ -2,18 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Typography, Row, Col, Input, Button, Alert, Avatar } from 'antd';
+
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
+import { useMutation } from "@apollo/client";
 
 import avatar from '../../../assets/images/avatar.jpeg';
-
-import { useMutation } from "@apollo/client";
 import { getLoginMutation } from '../../queries/index';
 
 import { StyledLoginWrapper, StyledFormWrapper, StyledErrorWrapper } from './style';
 
 const Login = () => {
 
-    const { Title, Text } = Typography;
+    const { Title } = Typography;
     const navigate = useNavigate();
     const [loginData, setLoginData] = useState('');
     const [name, setName] = useState("");

@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 
 import { Typography, Avatar, Button } from 'antd';
 
-import avatar from '../../../assets/images/avatar.jpeg';
-
 import { BellOIcon } from '@iconbox/fa4';
 import { ArrowIosBackOutlineIcon } from '@iconbox/eva'; 
+
+import avatar from '../../../assets/images/avatar.jpeg';
 
 import { StyledHeaderWrapper,
          StyledUserName, 

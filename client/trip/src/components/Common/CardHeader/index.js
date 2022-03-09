@@ -5,17 +5,17 @@ import { Typography } from 'antd';
 
 import { StyledCardHeaderWrapper } from './style';
 
-const CardHeader = ({title, link}) => {
-    const { Title } = Typography;
+const CardHeader = ({ title, link }) => {
+  const { Title } = Typography;
 
-    return (
-      <StyledCardHeaderWrapper>
-        <Title level={5}>{title}</Title>
-        <NavLink to={link} >
-          view all
+  return (
+    <StyledCardHeaderWrapper>
+      <Title level={5}>{title}</Title>
+      <NavLink to={link} >
+        view all
         </NavLink>
-      </StyledCardHeaderWrapper>
-    );
+    </StyledCardHeaderWrapper>
+  );
 }
 
 CardHeader.propTypes = {

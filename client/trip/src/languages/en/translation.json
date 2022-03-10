@@ -1,5 +1,8 @@
 {
     "name": "Trip",
-    "welcome": "Welcome",
-    "loading": "loading ..."
+    "welcome": "Welcome back!",
+    "loading": "loading ...",
+    "viewAll": "view all",
+    "login": "Login",
+    "noNotif": "There is'nt any Notification now"
 }

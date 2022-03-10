@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './assets/fonts/gilroy/Gilroy-Medium.ttf';
 import './index.css';
+import './i18n';
 
 ReactDOM.render(
   <React.StrictMode>

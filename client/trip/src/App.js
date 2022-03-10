@@ -1,12 +1,8 @@
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import { ApolloProvider } from "@apollo/client";
-import { client } from "../src/components/queries/index";
+import { ApolloProvider } from '@apollo/client';
+import { client } from '../src/components/queries/index';
 
 import 'antd/dist/antd.css';
 
@@ -20,25 +16,24 @@ import Notifications from './components/Pages/Notifications';
 import Login from './components/Pages/Login';
 import Profile from './components/Pages/Profile';
 
-
 function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-      <div className="App font-face-gb">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/details" element={<Details />} />
-          <Route path="/schedule" element={<Schedule />} />
-          <Route path="/destinations" element={<Destinations />} />
-          <Route path="/recommended" element={<Recommended />} />
-          <Route path="/discounts" element={<Discounts />} />
-          <Route path="/notifications" element={<Notifications />} />
-        </Routes>
-      </div>
-    </Router>
+        <div className="App font-face-gb">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/details" element={<Details />} />
+            <Route path="/schedule" element={<Schedule />} />
+            <Route path="/destinations" element={<Destinations />} />
+            <Route path="/recommended" element={<Recommended />} />
+            <Route path="/discounts" element={<Discounts />} />
+            <Route path="/notifications" element={<Notifications />} />
+          </Routes>
+        </div>
+      </Router>
     </ApolloProvider>
   );
 }
